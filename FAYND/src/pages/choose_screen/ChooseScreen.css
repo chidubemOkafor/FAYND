@@ -1,0 +1,104 @@
+.choose_screen_main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.heading {
+    color: #2E151B;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.faint {
+    color: var(--Brand-Primary, #2F4454);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14.002px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.603px; /* 140% */
+    letter-spacing: 0.14px;
+}
+
+.gray_button {
+    display: flex;
+    width: 329px;
+    height: 58px;
+    padding: 0px 10px;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: var(--Brand-Primary, #2F4454);
+}
+
+.transparent_button {
+    display: flex;
+    width: 329px;
+    height: 58px;
+    padding: 0px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid #2E151B;
+}
+
+.underline_button {
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.left_img {
+    left: 0;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    
+}
+
+.first_option_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10em;
+    gap: 20px;
+}
+
+.svg_div {
+    
+}
+
+.image {
+    position: absolute;
+    background-color: #2E151B;
+    margin-left: 50px;
+}
+
+
+
+.main_images_screen {
+    height: 100%;
+    width: 20em;
+}

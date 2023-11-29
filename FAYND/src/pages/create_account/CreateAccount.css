@@ -1,0 +1,12 @@
+.top_bar {
+    width: 1440px;
+    height: 136px;
+    flex-shrink: 0;
+    background: #FFF;
+}
+
+.create_account_main {
+    background-image: url("../../assets/Rectangle 3464029.png");
+    width: 100vw;
+    height: 100vh;
+}
