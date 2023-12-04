@@ -1,12 +1,271 @@
 .top_bar {
-    width: 1440px;
+    width: 100vw;
     height: 136px;
     flex-shrink: 0;
     background: #FFF;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    z-index: 20;
 }
 
 .create_account_main {
     background-image: url("../../assets/Rectangle 3464029.png");
-    width: 100vw;
-    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_image {
+    width: 120px;
+    height: 64px;
+    flex-shrink: 0;
+    padding-left: 160px;
+}
+
+.inner_account_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.sign_in_button {
+    display: flex;
+    padding: 8px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 140px;
+    background: var(--Brand-Primary, #2F4454);
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-right: 160px;
+}
+.fayndLogo {
+  position: absolute;
+  padding-left: 8em;
+  opacity: 0.03;
+  margin-top: 4em;
+  z-index: 0;
+
+}
+
+.account_form_div {
+    background-color: white;
+    margin: 20px;
+    width: 821px;
+    height: 818px;
+    flex-shrink: 0;
+    padding: 29px 44px 29px 44px;
+    border-radius: 6px;
+}
+
+.account_main_form_div {
+    display: flex;
+    margin-top: 10em;
+    justify-content: center;
+    align-items: center;
+}
+
+.create_account_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.create_account_form div {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.heading_account {
+    color: #2E151B;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.second_text {
+    color: var(--black, #2E151B);
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 45px;
+}
+
+.input_div {
+    margin-bottom: 34px;
+    display: flex;
+    gap: 0.5px;
+    flex-direction: column;
+}
+
+.custom-select-container {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.input {
+    display: inline-flex;
+    height: 45px;
+    width: 385px;
+    border: 0.8px solid rgba(41, 41, 41, 0.30);
+    padding-left: 11px;
+    justify-content: center;
+    align-items: center;
+    color: rgba(46, 21, 27, 0.90);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    z-index: 10;
+}
+
+.input:focus {
+    outline: none;
+    background-color: #E9E9E9;
+}
+
+.password_input {
+    width: 330px;
+    border: none;
+    color: rgba(46, 21, 27, 0.90);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input:focus-within {
+    background-color: #E9E9E9;
+}
+
+.password_input:focus {
+    outline: none;
+    background-color: #E9E9E9;
+}
+
+.eyes {
+    width: 20px;
+    height: 20px;
+    margin-right: 14px;
+}
+
+
+
+label {
+    color: #272626;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    opacity: 0.7;
+}
+
+.button_box {
+    display: flex;
+    justify-content: center;
+    width: 692.046px;
+}
+.second_gray_button {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    width: 440px;
+    height: 51px;
+    padding: 8px 16px 8px 19px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    margin-top: 30px;
+    background: var(--Brand-Primary, #2F4454);
+}
+
+p {
+    margin-top: 16px;
+    color: var(--black, #2E151B);
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.9;
+}
+
+.or {
+    color: var(--black, #2E151B);
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.7;
+    margin-top: 48px;
+}
+
+::placeholder {
+    color: rgba(46, 21, 27, 0.50);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.logo_button {
+    margin-top: 11px;
+    display: flex;
+    gap: 16px;
+}
+
+.logo_box {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.line {
+    width: 692.046px;
+    height: 1px;
+    background: rgba(46, 21, 27, 0.10);
+    margin-top: 11px;
+}
+
+.span {
+    opacity: 0.7;
+    color: var(--brand-2-900, #DA7893);
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

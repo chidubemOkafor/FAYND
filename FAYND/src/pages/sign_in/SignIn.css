@@ -1,0 +1,16 @@
+.signin_background {
+    background-color: white;
+    padding: 29px 44px 29px 44px;
+}
+
+form div {
+    display: flex;
+    gap: 19px;
+}
+
+.bottom_div {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

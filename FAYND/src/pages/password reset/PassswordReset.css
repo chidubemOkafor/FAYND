@@ -1,0 +1,39 @@
+.resetDIv {
+    background-color: white;
+    padding: 44px 122px 44px 122px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input3 {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 0px solid var(--brand-2-900, #DA7893);
+    background: var(--Neutral-Border, #D5DADD);
+    margin: 2px;
+    text-align: center;
+    color: var(--Brand-Primary, #2F4454);
+    font-family: Jost;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input3:focus {
+    outline: none;
+}
+
+.otpDiv2 {
+    width: 200px;
+    height: 51px;
+    flex-shrink: 0;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+}
