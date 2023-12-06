@@ -12,7 +12,7 @@
 .inner_curve_div {
     width: 40%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     height: 100vh;
@@ -21,8 +21,8 @@
 }
 
 .office_lady {
-    width: 500px;
-    height: 500px;
+    width: 70%;
+    height: 100%;
     flex-shrink: 0;
 }
 

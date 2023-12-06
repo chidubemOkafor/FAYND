@@ -1,7 +1,7 @@
 import React from 'react'
 import curve from '../../assets/curve.svg'
 import './EmailVerification.css'
-import officelady from '../../assets/20.png'
+import singleLogo from '../../assets/Fynd_single.png'
 import fayndLogo from '../../assets/FYND nametag wine 1.png'
 import AuthCode from 'react-auth-code-input'
 import fayndRench from '../../assets/Fynd_single.png'
@@ -12,12 +12,7 @@ const EmailVerification = () => {
     <div className='main_verification_div'>
         <div className='background_curve'>
             <div className='inner_curve_div'>
-            <div>
-                <img src={fayndRench} className='rench'/>
-                <h1 className='h1'>Welcome to Safety</h1>
-                <h1 className='p'>Always trust us to protect your items by registering them with us!</h1>
-            </div>
-                <img src={officelady} className='office_lady'/>
+                <img src={singleLogo} className='office_lady'/>
             </div>
         </div>
         

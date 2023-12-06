@@ -45,6 +45,8 @@
     flex-shrink: 0;
     border-radius: 8px;
     background: var(--Brand-Primary, #2F4454);
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 .transparent_button {
@@ -58,6 +60,7 @@
     flex-shrink: 0;
     border-radius: 8px;
     border: 1px solid #2E151B;
+    cursor: pointer;
 }
 
 .underline_button {
@@ -68,6 +71,7 @@
     font-weight: 400;
     line-height: normal;
     text-decoration-line: underline;
+    cursor: pointer;
 }
 
 .left_img {
@@ -86,9 +90,6 @@
     gap: 20px;
 }
 
-.svg_div {
-    
-}
 
 .image {
     position: absolute;

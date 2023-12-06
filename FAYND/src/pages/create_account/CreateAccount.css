@@ -26,7 +26,6 @@
     width: 120px;
     height: 64px;
     flex-shrink: 0;
-    padding-left: 160px;
 }
 
 .inner_account_div {
@@ -62,8 +61,6 @@
 .account_form_div {
     background-color: white;
     margin: 20px;
-    width: 821px;
-    height: 818px;
     flex-shrink: 0;
     padding: 29px 44px 29px 44px;
     border-radius: 6px;

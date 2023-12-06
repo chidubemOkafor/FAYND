@@ -7,6 +7,7 @@ import SignIn from './pages/sign_in/SignIn';
 import PassswordReset from './pages/password reset/PassswordReset';
 import PasswordResetCode from './pages/password reset/PasswordResetCode';
 import NewPassword from './pages/password reset/NewPassword';
+import LandingPage from './pages/landing page/LandingPage';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/resetpassword' element={<PassswordReset/>}/>
           <Route path='/resetpassword/verifycode' element={<PasswordResetCode/>}/>
           <Route path='/resetpassword/newpassword' element={<NewPassword/>}/>
+          <Route path='/home' element={<LandingPage/>}/>
         </Routes>
       </BrowserRouter>
     </>

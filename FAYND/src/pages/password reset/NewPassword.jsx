@@ -7,8 +7,8 @@ const NewPassword = () => {
   return (
     <div className='create_account_main'>
     <div className='resetDIv'>
-        <p className='heading_account'>Set your new Password</p>
-        <p className='second_text'>Your new password must be different from previous used passwords.</p>
+            <p className='heading_account'>Set your new Password</p>
+            <p className='second_text'>Your new password must be different from previous used passwords.</p>
         <div className='input_div'>
                     <label>Password</label><br/>
                     <div className='input'><input className='password_input' type='password'/>
@@ -21,7 +21,7 @@ const NewPassword = () => {
                     <img src={eye} className='eyes'/>
                     </div>
                   </div>
-        <button className='second_gray_button'>Reset Password</button>
+        <Link to={'/home'}><button className='second_gray_button'>Reset Password</button></Link>
     </div>
     </div>
   )
