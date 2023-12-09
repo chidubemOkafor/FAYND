@@ -1,0 +1,117 @@
+.dots_and_logo {
+    display: flex;
+    width: 90%;
+    margin-top: 5em;
+    justify-content: space-between;
+}
+
+.mainReportedItems {
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.items_title {
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27.109px; /* 56.477% */
+    display: flex;
+    width: 468px;
+    height: 52px;
+    padding: 9.036px;
+    justify-content: center;
+    align-items: center;
+    gap: 9.036px;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--black, #2E151B);
+    }
+
+.items_sub_title {
+    color: var(--neutral-neutral-600, rgba(46, 21, 27, 0.70));
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 45.182px; /* 251.011% */
+    margin-bottom: 24px;
+}
+
+.fayndLogo2 {
+    width: 90em;  
+    opacity: 0.03;
+}
+
+.faynd_div {
+    position: absolute;
+    margin-top: 5em;
+}
+
+.dot_abs_div {
+    position: absolute;
+    margin-top: 20em;
+}
+
+.grid_items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.thumbnail {
+    width: 333px;
+    height: 260.469px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: url(<path-to-image>), lightgray -0.002px 0px / 100.001% 100% no-repeat;
+}
+
+.name_of_item {
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px; /* 128.571% */
+}
+
+.location_of_item {
+    color: #191919;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14.4px; /* 120% */
+    margin: 0;
+}
+
+.items_inner_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.items_inner_div div {
+    margin: 0;
+}
+
+.details_button {
+    border-radius: 8.972px 0px;
+    border: 0.897px solid var(--Neutral-Border, #D5DADD);
+    display: flex;
+    height: 35.889px;
+    padding: 8.972px;
+    justify-content: center;
+    align-items: center;
+    gap: 8.972px;
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26.917px; /* 192.262% */
+}

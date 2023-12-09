@@ -8,6 +8,7 @@
     align-items: center;
     z-index: 20;
     position: fixed;
+    top: 0;
 }
 
 .main_navbar ul {
@@ -34,7 +35,7 @@
 }
 
 .inner_main_div {
-    width: 80vw;
+    width: 85vw;
     height: 100px;
     display: flex;
     justify-content: space-between;

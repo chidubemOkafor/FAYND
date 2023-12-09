@@ -1,0 +1,144 @@
+.innerMainReported {
+    width: 1093px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.items_title3 {
+    display: flex;
+    width: 346px;
+    height: 52px;
+    padding: 9.036px;
+    justify-content: center;
+    align-items: center;
+    gap: 9.036px;
+    flex-shrink: 0;
+    border-bottom: 3px solid var(--brand-brand-900, #376E6F);
+}
+
+.left_curve {
+    width: 656.477px;
+    height: 530.874px;
+    flex-shrink: 0;
+    stroke-width: 3px;
+    stroke: #558485;
+    position: absolute;
+    transform: translateX(-80%);
+}
+
+.right_curve {
+    width: 675.499px;
+    height: 534px;
+    flex-shrink: 0;
+    transform: rotate(30.502deg);
+    position: absolute;
+    
+}
+
+.center_curve {
+    position: absolute;
+    margin-left: 2em;
+    transform: translatey(3em);
+}
+
+.main_thin_div {
+    transform: translateX(1em);
+    margin-top: 3em;
+}
+
+.right_thin_curve {
+    position: absolute;
+    transform: translateX(-15em);
+    background-color: red;
+}
+
+.woman_left {
+    display: flex;
+    width: 193px;
+    height: 193px;
+    position: absolute;
+    transform: translateY(1.4em);
+    flex-shrink: 0;
+    border-radius: 48%;
+}
+
+.woman_left_container {
+    background: linear-gradient(180deg, #1D0024 0%, #100014 100%);
+    border-radius: 100%;
+    width: 193px;
+    height: 193px;
+    padding: 20px;
+    position: absolute;
+    transform: translateX(-35em);
+    margin-top: 4em;
+}
+
+.key_div {
+    position: absolute;
+    transform: translate(-22em);
+    margin-top: 17em;
+}
+
+.key_dev2 {
+    position: absolute;
+    transform: translate(13em);
+    margin-top: 14em;
+}
+
+.woman_right {
+    position: absolute;
+    display: flex;
+    transform: translateX(20em);
+    margin-top: 10em;
+    width: 190px;
+    height: 190px;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 100px;
+    background: linear-gradient(180deg, #806A6A 0%, #665654 100%);
+}
+
+.black_hair {
+    position: absolute;
+    transform: translateY(30em);
+    transform: translateX(13em);
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 100px;
+    background: linear-gradient(0deg, #FFC9B3 0%, #FFD2C2 100%);
+}
+
+.orange_hair {
+    position: absolute;
+    margin-top: 31em;
+    transform: translateX(-20em);
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 100px;
+    background: linear-gradient(0deg, #FFC9B3 0%, #FFD2C2 100%);
+}
+
+.woman_center {
+    position: absolute;
+    display: flex;
+    width: 350px;
+    height: 350px;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 100%;
+    transform: translateX(-11em);
+    margin-top: 5em;
+    background: linear-gradient(180deg, #806A6A 0%, #665654 100%);
+}

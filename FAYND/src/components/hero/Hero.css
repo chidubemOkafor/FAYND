@@ -1,7 +1,10 @@
 .pink_curve {
-    background-color:rgba(218, 120, 147, 0.30);
+    background-image: url('../../assets/pinkcurve.svg');
     height: 100vh;
+    display: flex;
+    align-items: center;
     width: 50%;
+    background-repeat: no-repeat;
     background-size: contain;
     z-index: 0;
 }
@@ -12,10 +15,69 @@
 
 .woman_laptop {
     width: 870.734px;
-    height: 100%;
-    top: 0;
+    height:  688px;
+    bottom: 0;
     position: absolute;
     right: 0;
-    margin-top: 20em;
     z-index: 0;
+    
+}
+
+.random_curver {
+    position: absolute;
+    fill: #FFF;
+    stroke-width: 0.133px;
+    stroke: var(--black, #2E151B);
+    width: 435.681px;
+    height: 280.183px;
+    flex-shrink: 0;
+}
+
+.hero_title {
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    z-index: 0;
+    padding-top: 2em;
+}
+
+.h2_text {
+    color: var(--black, #2E151B);
+    font-family: DM Sans;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 176.471% */
+}
+
+.hero_button {
+    display: flex;
+    width: 329px;
+    height: 61px;
+    padding: 8px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: var(--Brand-Primary, #663851);
+    color: #E8F0FE;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: 0;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.10), 0px 4px 6px -4px rgba(0, 0, 0, 0.10);
+}
+
+.left_text_container {
+    width: 576px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-left: 15vh;
 }

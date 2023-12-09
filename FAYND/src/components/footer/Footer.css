@@ -1,0 +1,129 @@
+.footer_main_div {
+    margin-top: 40em;
+    width: 100%;
+    flex-shrink: 0;
+    background: var(--black, #2E151B);
+}
+
+.FAYND_white {
+    width: 246px;
+    height: 128px;
+    flex-shrink: 0;
+}
+
+.logo_text {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 240px;
+    height: 54px;
+    flex-shrink: 0;
+}
+
+.title {
+    color: var(--White, #FFF);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    opacity: 100;
+}
+
+ul {
+    list-style-type: none;
+    color: var(--White, #FFF);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+    opacity: 0.7;
+    line-height: 5em;
+}
+
+.control_footer_div {
+    display: flex;
+    margin-left: 8%;
+    gap: 10%;
+    padding-top: 7%;
+}
+
+.divider {
+    width: 85%;
+    height: 1.013px;
+    flex-shrink: 0;
+    opacity: 0.25;
+    background: var(--White, #FFF);
+    align-items: center;
+    margin-top: 77px;
+}
+
+.divider_container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+/* 
+.white_ring {
+    width: 645px;
+    height: 653.535px;
+    flex-shrink: 0;
+    border-radius: 653.535px;
+    border: 120px solid var(--White, #FFF);
+    position: absolute;
+    transform: translatey(-40em);
+    margin-left: 80em;
+    overflow:hidden;
+} */
+
+
+.inner_logo_divs {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.social_media {
+    color: var(--White, #FFF);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.7;
+}
+
+.icon_logo {
+    width: 24px;
+    height: 24.318px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.terms_div {
+    display: flex;
+    gap: 40px;
+}
+
+.logo_divs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    margin-top: 20.26px;
+    margin-bottom: 50px;
+}
+
+.footer_title {
+
+}
+
+.logo_find {
+
+}
