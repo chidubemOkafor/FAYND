@@ -20,7 +20,27 @@
     position: absolute;
     right: 0;
     z-index: 0;
-    
+}
+
+.box_rot {
+    width: 45px;
+    height: 45px;
+    transform: rotate(-42.231deg);
+    flex-shrink: 0;
+    border: 1px solid #2E151B;
+    position: absolute;
+    top: 29em;
+    left:2em
+}
+
+.money_pot {
+    width: 48px;
+    height: 48px;
+    transform: rotate(26.23deg);
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 2em;
+    left: 20em;
 }
 
 .random_curver {
