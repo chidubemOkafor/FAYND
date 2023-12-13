@@ -48,6 +48,7 @@
 .main_thin_div {
     transform: translateX(1em);
     margin-top: 3em;
+    margin-bottom: 40em;
 }
 
 .right_thin_curve {

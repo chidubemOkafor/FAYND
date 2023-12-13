@@ -13,18 +13,10 @@ const Navbar = () => {
             <img className='top_image' src={image} alt="logo" />
             </div>
             <ul>
-            <Link to={'/home'}><li>
-                    Home
-                </li></Link>
-                <li>
-                    About Us
-                </li>
-                <li> 
-                    <Link to={'/faq'}>FAQs</Link>
-                </li>
-                <li>
-                    Confirm
-                </li>
+            <Link to={'/home'}><li>Home</li></Link>
+            <Link to={'/aboutus'}><li>About Us</li></Link>
+            <Link to={'/faq'}><li>FAQs</li></Link>
+            <Link to={'/contactus'}><li>Contact us</li></Link>
             </ul>
             <div className='right_icon_div'>
                 <img className='icon' src={magnifying} alt="magnifying" />

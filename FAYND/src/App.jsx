@@ -12,6 +12,8 @@ import ReportPage from './pages/report an item/ReportPage';
 import Confirmation from './pages/confirmation/Confirmation';
 import Congratulation from './pages/congratulation/Congratulation';
 import FAQ from './pages/FAQ/FAQ';
+import AboutUs from './pages/about us/AboutUs';
+import ContactUs from './pages/contact us/ContactUs';
 
 function App() {
 
@@ -32,6 +34,8 @@ function App() {
           <Route path='/reportpage' element={<ReportPage/>}/>
           <Route path='/reportpage/confirmation' element={<Confirmation/>}/>
           <Route path='/reportpage/confirmation/congratulation' element={<Congratulation/>}/>
+          <Route path='/aboutus' element={<AboutUs/>}/>
+          <Route path='/contactus' element={<ContactUs/>}/>
         </Routes>
       </BrowserRouter>
     </>

@@ -1,0 +1,23 @@
+.AboutUs {
+    color: #2E151B;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.aboutUs_text {
+    color: rgba(46, 21, 27, 0.80);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px; /* 190% */
+    margin-bottom: 15px;
+}
+
+.aboutus_div {
+    width: 30em;
+}
