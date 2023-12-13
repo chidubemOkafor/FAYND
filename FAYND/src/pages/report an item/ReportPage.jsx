@@ -1,6 +1,5 @@
 import React,{useState,useRef} from 'react'
 import Navbar from '../../components/navbar/Navbar'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './ReportPage.css'
 import arrow_up from '../../assets/arrow_up.svg'
 import { Link } from 'react-router-dom';
