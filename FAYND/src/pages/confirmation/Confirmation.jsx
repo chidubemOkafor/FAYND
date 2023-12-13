@@ -2,7 +2,7 @@ import React from 'react'
 import './Confirmation.css'
 import Navbar from '../../components/navbar/Navbar'
 import iphoneImage from '../../assets/Rectangle 3464054.png'
-
+import { Link } from 'react-router-dom'
 
 const Confirmation = () => {
   return (
@@ -29,7 +29,7 @@ const Confirmation = () => {
                         <p>Image</p>
                         <img src={iphoneImage} className='iphoneImage' />
                     </div>
-                    <button className='btn_report'>Submit</button>
+                    <Link to={'/reportpage/confirmation/congratulation'}><button className='btn_report'>Submit</button></Link>
                     <p className='back'>Back</p>
                 </div>
             </div> 

@@ -10,6 +10,8 @@ import NewPassword from './pages/password reset/NewPassword';
 import LandingPage from './pages/landing page/LandingPage';
 import ReportPage from './pages/report an item/ReportPage';
 import Confirmation from './pages/confirmation/Confirmation';
+import Congratulation from './pages/congratulation/Congratulation';
+import FAQ from './pages/FAQ/FAQ';
 
 function App() {
 
@@ -25,9 +27,11 @@ function App() {
           <Route path='/resetpassword' element={<PassswordReset/>}/>
           <Route path='/resetpassword/verifycode' element={<PasswordResetCode/>}/>
           <Route path='/resetpassword/newpassword' element={<NewPassword/>}/>
+          <Route path='/faq' element={<FAQ/>}/>
           <Route path='/home' element={<LandingPage/>}/>
           <Route path='/reportpage' element={<ReportPage/>}/>
           <Route path='/reportpage/confirmation' element={<Confirmation/>}/>
+          <Route path='/reportpage/confirmation/congratulation' element={<Congratulation/>}/>
         </Routes>
       </BrowserRouter>
     </>

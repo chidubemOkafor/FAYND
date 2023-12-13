@@ -3,6 +3,7 @@ import './Navbar.css'
 import image from '../../assets/FYND nametag wine 1 (1).png'
 import magnifying  from '../../assets/magnifying.svg'
 import profile from '../../assets/profile.svg'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -12,14 +13,14 @@ const Navbar = () => {
             <img className='top_image' src={image} alt="logo" />
             </div>
             <ul>
-                <li>
+            <Link to={'/home'}><li>
                     Home
-                </li>
+                </li></Link>
                 <li>
                     About Us
                 </li>
-                <li>
-                    FAQs
+                <li> 
+                    <Link to={'/faq'}>FAQs</Link>
                 </li>
                 <li>
                     Confirm
