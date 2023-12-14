@@ -20,7 +20,7 @@ const Navbar = () => {
             </ul>
             <div className='right_icon_div'>
                 <img className='icon' src={magnifying} alt="magnifying" />
-                <img className='icon' src={profile} alt="profile" />
+                <Link to={'/profile/settings'}><img className='icon' src={profile} alt="profile" /></Link>
             </div>
         </div>
     </div>

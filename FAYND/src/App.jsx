@@ -14,6 +14,7 @@ import Congratulation from './pages/congratulation/Congratulation';
 import FAQ from './pages/FAQ/FAQ';
 import AboutUs from './pages/about us/AboutUs';
 import ContactUs from './pages/contact us/ContactUs';
+import ProfileSetting from './pages/profile/faynd setting/ProfileSetting';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
           <Route path='/reportpage/confirmation/congratulation' element={<Congratulation/>}/>
           <Route path='/aboutus' element={<AboutUs/>}/>
           <Route path='/contactus' element={<ContactUs/>}/>
+          <Route path='/profile/settings' element={<ProfileSetting/>}/>
         </Routes>
       </BrowserRouter>
     </>

@@ -1,0 +1,105 @@
+.sidebar_div_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--black, #2E151B);
+    width: 360px;
+    height: 100vh;
+
+}
+
+.sidebar_icons {
+    width: 24px;
+    height: 24px;
+}
+
+.list_side_icon {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+@keyframes delay {
+    0% {
+        border-left: 1px solid #DA7893;
+    }
+
+    100% {
+        border-left: 10px solid #DA7893;
+    }
+}
+
+.list_side_icon:hover {
+   animation: 0.5s delay ease-in-out;
+   border-left: 5px solid #DA7893;
+}
+
+.sidebar_icons:hover {
+    color: var(--brand-2-900, #DA7893)   ;
+}
+
+.sidebar_text:hover {
+    color: var(--brand-2-900, #DA7893);
+}
+
+.sidebar_text {
+    color: var(--2f4454, #EAECEE);
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 25px; /* 178.571% */
+letter-spacing: 0.8px;
+text-transform: capitalize;
+margin-bottom: 15px;
+}
+
+.faynd_mini_logo {
+    display: flex;
+width: 55px;
+height: 100px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+margin-bottom: 20px;
+margin-top: 5vh;
+}
+
+.profileWoman {
+    border-radius: 60px;
+    border: 2px solid var(--2f4454, #EAECEE);
+
+}
+
+.name {
+    color: var(--2f4454, #EAECEE);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px; /* 138.889% */
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+}
+
+.email {
+    color: var(--2f4454, #EAECEE);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px; /* 208.333% */
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+}
+
+.profile_pic_div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 5vh;
+}
