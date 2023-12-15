@@ -1,4 +1,3 @@
-import ClipboardJS from 'clipboard';
 import { useEffect } from 'react';
 
 export const useCopy = (textToCopy) => {
