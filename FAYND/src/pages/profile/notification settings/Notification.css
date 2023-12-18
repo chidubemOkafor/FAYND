@@ -1,0 +1,333 @@
+.noti_title {
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px; /* 78.125% */
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+}
+
+@keyframes arrowSpinUp {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes arrowSpinBack {
+    0% {
+        transform: rotate(180deg)
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.arrow_down {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.rotated {
+    animation: arrowSpinUp 0.5s ease-in-out forwards;
+}
+
+.rotated_back {
+    animation: arrowSpinBack 0.5s ease-in-out forwards;
+}
+
+.notificationCount {
+    background-color: red;
+    padding: 1px;
+    width: 14px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.container_language_bell {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.language_dropdown , .language_dropdown_bell{
+    display: flex;
+    border-radius: 20px;
+    background: var(--Brand-Primary, #2F4454);
+    justify-content: center;
+    align-items: center;
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.language_dropdown_bell {
+    background: var(--Brand-Primary, #161D26);   
+}
+
+.container_language {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.main_profile_notification {
+    background: var(--2f4454, #EAECEE);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.card_div {
+    border-radius: 4px;
+    background: url('../../../assets/Rectangle600.png'), lightgray 50% / cover no-repeat;
+    background-color:  var(--Brand-Primary, #2F4454);
+    width: 362px;
+    height: 160px;
+    padding: 15px;
+    flex-shrink: 0;
+}
+
+.notification_rectangle {
+    width: 362px;
+    border-radius: 5px;
+    border: 1px solid #D7D7D7;
+    background: #FFF;
+    display: flex;
+    cursor: pointer;
+    padding: 15px;
+    gap: 15px;
+}
+
+.notification_subtitle {
+    color: #000;
+    font-family: DM Sans;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13px; /* 144.444% */
+    opacity: 0.87;
+}
+
+.scrollable_notification_bar {
+    display: flex;
+    flex-direction: column;
+    max-height: 49vh;
+    gap: 8px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.notification_title {
+    color: #310131;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.color_text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.image_card_div {
+    width: 27.008px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    background: #E4FAD3;
+    padding: 2px;
+}
+
+.split_noti {
+    display: flex;
+    gap: 42px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.image_card_div2 {
+    width: 27.008px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    background: #FBF6D2;
+    padding: 2px;
+}
+
+.tiny {
+    color: #FFF;
+font-family: Poppins;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 19px; /* 190% */
+
+}
+
+.copyIcon2 {
+    width: 24px;
+height: 24px;
+flex-shrink: 0;
+cursor: pointer;
+}
+
+.second_normal {
+    color: #FFF;
+font-family: Poppins;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 19px; /* 158.333% */
+}
+
+.classic_bold_title {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 19.25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.bold_tiny {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+}
+
+.noti_title_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 71em;
+    margin-top: 20px;
+}
+
+.noti_title_div div {
+    display: flex;
+    align-items: center;
+    gap: 31px;
+}
+.uk {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.shownotification_div {
+    width: 637.795px;
+    max-height: 500px;
+    flex-shrink: 0;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.shownotification_div_title {
+    color: #310131;
+    font-family: Poppins;
+    font-size: 19.25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.underline {
+    width: 100%;
+    margin-top: 20px;
+    height: 0.5px;
+    background-color: #310131;
+    opacity: 0.2;
+}
+
+.newbutton {
+    background-color:  var(--Brand-Primary, #2F4454);
+    padding: 20px;
+    width: 15em;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.button_noti_div {
+    display: flex;
+    justify-content: end;
+}
+
+.make_column {
+    display: flex;
+}
+
+.inner_flex {
+    display: flex;
+    gap: 23px;
+    margin-top: 60px;
+}
+
+.color_text div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notification_tag {
+    color: #f3dd35;
+    font-family: DM Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 13px; /* 144.444% */
+    opacity: 0.87;
+    background-color: #FBF6D2;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #f8f1bd;
+    height: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-height: 600px)  {
+    
+}

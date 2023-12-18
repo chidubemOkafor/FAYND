@@ -1,0 +1,86 @@
+.table_top {
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+    width: 50em;
+
+}
+
+.secondtext {
+    color: #5C5C5C;
+font-family: DM Sans;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.uploadedText {
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 832px;
+    margin-bottom: 5px;
+}
+
+.found {
+    color: var(--brand-2-900, #DA7893);
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-decoration-line: underline;
+cursor: pointer;
+margin-bottom: 10px;
+}
+
+.main_takedown {
+    position: absolute;
+}
+
+.first_table {
+    margin-bottom: 4em;
+}
+
+.firsttext {
+    color: #190019;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.second_main_profile div {
+    align-items: start;
+    width: 832px;
+    position: absolute;
+    top:44px
+}
+
+.table_head {
+    background: rgba(218, 120, 147, 0.20);
+    height: 44px;
+}
+
+.table_body {
+    color: rgba(46, 21, 27, 0.70);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;  
+    width: 90px;  
+}
+
+.mainbody {
+    height: 44px;
+    border-bottom: 1px solid #000000;
+}

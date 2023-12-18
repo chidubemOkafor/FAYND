@@ -15,6 +15,9 @@ import FAQ from './pages/FAQ/FAQ';
 import AboutUs from './pages/about us/AboutUs';
 import ContactUs from './pages/contact us/ContactUs';
 import ProfileSetting from './pages/profile/faynd setting/ProfileSetting';
+import Items from './pages/profile/items/Items';
+import Message from './pages/profile/messages/Message';
+import Notification from './pages/profile/notification settings/Notification';
 
 function App() {
 
@@ -38,6 +41,9 @@ function App() {
           <Route path='/aboutus' element={<AboutUs/>}/>
           <Route path='/contactus' element={<ContactUs/>}/>
           <Route path='/profile/settings' element={<ProfileSetting/>}/>
+          <Route path='/profile/items' element={<Items/>}/>
+          <Route path='/profile/notification' element={<Notification/>}/>
+          <Route path='/profile/message' element={<Notification/>}/>
         </Routes>
       </BrowserRouter>
     </>
