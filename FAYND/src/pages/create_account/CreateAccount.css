@@ -120,6 +120,31 @@
     outline: none;
 }
 
+.input_dropdown {
+    height: 48px;
+    width: 400px;
+    outline: none;
+    border: 0.8px solid rgba(41, 41, 41, 0.30);
+    background-color: white;
+    padding-left: 7px;
+}
+
+.span3 {
+    position: absolute;
+    margin-top: 90px;
+    color: var(--brand-2-900, #DA7893);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19.603px;
+    letter-spacing: 0.14px;
+}
+
+.span3 {
+    width: 385px;
+}
+
 .input {
     display: inline-flex;
     height: 45px;
@@ -166,6 +191,7 @@
     width: 20px;
     height: 20px;
     margin-right: 14px;
+    cursor: pointer;
 }
 
 

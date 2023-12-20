@@ -64,7 +64,26 @@
 .right div {
     z-index: 10;
 }
-.input2 {
+
+
+@keyframes redBorder {
+    0% {
+        border: 1px solid rgba(0, 0, 0, 0.35);
+    }
+    50% {
+        
+    }
+}
+
+.optstyle {
+    text-align: center;
+ padding-left: 10em;
+}
+.empty_field {
+    border: 1px solid rgba(255, 0, 0, 0.35);
+}
+
+.input2, .empty_field {
     width: 35px;
     height: 35px;
     text-align: center;
@@ -102,6 +121,7 @@
     letter-spacing: 0.14px;
     text-decoration-line: underline;
     margin-bottom: 41px;
+    cursor: pointer;
 }
 
 .grayButton {
@@ -122,6 +142,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    cursor: pointer;
 }
 
 a {
