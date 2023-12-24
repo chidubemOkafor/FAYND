@@ -12,6 +12,7 @@ import EmptyNav from '../../components/faynd navbars/EmptyNav';
 import axios from 'axios';
 import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 const CreateAccount = () => {
   const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;

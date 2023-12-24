@@ -97,9 +97,11 @@
     margin-left: 50px;
 }
 
-
-
 .main_images_screen {
     height: 100%;
     width: 20em;
+}
+
+@media (max-width: 500px) {
+   
 }

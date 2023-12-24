@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import pinkdot from '../../assets/dot/pinkdot.svg'
 import bluedot from '../../assets/dot/bluedot.svg'
 import greendot from '../../assets/dot/greendot.svg'
@@ -6,8 +6,19 @@ import './ReportedItems.css'
 import fayndLogo from '../../assets/FYND nametag wine 1.png'
 import { reportedItems } from './items'
 import thumbnail from '../../assets/Rectangle 3464029.png'
+import axios from 'axios'
 
 const ReportedItems = () => {
+    const [data, setData] = useState({
+        
+    })
+    const handleReportItem = async() => {
+        try {
+            await axios.post()
+        } catch (error) {
+
+        }
+    }
   return (
     <div className='mainReportedItems'>
         <div className='dots_and_logo'>

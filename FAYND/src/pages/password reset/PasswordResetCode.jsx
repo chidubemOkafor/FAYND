@@ -27,7 +27,8 @@ const PasswordResetCode = (prop) => {
       try {
         const response = await axios.post(url + 'api/v1/users/verify-token',data)
         if(response.data.message === "Verification successful, proceed to Reset Password") {
-          const setCookie = Cookies.set("access_token",response.data.data.access_token,{ expires: 7, sameSite: 'strict' })
+          console.log(response)
+          const setCookie = Cookies.set("refresh_token",response.data.data.refresh_token,{ expires: 7, sameSite: 'strict' })
           if(setCookie) {
             navigate("/resetpassword/newpassword")
           }

@@ -98,3 +98,15 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.lower_button_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lower_button_div div {
+    display: flex;
+    align-items: baseline;
+}

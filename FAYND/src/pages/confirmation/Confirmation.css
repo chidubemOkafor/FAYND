@@ -21,6 +21,14 @@
     height: 0.8px;
 }
 
+.iphoneImage {
+    height: 15em;
+    width: 20em;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .inner_cont_div {
     display: flex;
     flex-direction: column;

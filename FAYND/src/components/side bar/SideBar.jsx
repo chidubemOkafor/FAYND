@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './SideBar.css'
 import profileicon from '../../assets/sidebar icons/profileicon.svg'
 import messageicon from '../../assets/sidebar icons/messageicon.svg'
@@ -9,12 +9,14 @@ import logouticon from '../../assets/sidebar icons/logouticon.svg'
 import faynd from '../../assets/Fynd_single.png'
 import profileWoman from '../../assets/profileWoman.svg'
 import { Link } from 'react-router-dom'
+import {loginContext} from '../../contexts/loginContext.js'
 
 const SideBar = () => {
+    const {isLoggedIn} = useContext(loginContext)
   return (
     <div className='sidebar_div_main'>
         <div>
-            <Link to={'/'}><img src={faynd} alt='faynd logo' className='faynd_mini_logo'/></Link>
+            <Link to={'/home'}><img src={faynd} alt='faynd logo' className='faynd_mini_logo'/></Link>
         </div>
         <ul>
             <li className='list_side_icon'><img src={profileicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Profile</p></li>
@@ -27,8 +29,8 @@ const SideBar = () => {
         <div className='profile_pic_div'>
             <img src={profileWoman} alt="woman pic" className='profileWoman' />
             <div>
-                <p className='name'>Okache Mercy </p>
-                <p className='email'>mercyunique3@gmail.com</p>
+                <p className='name'>{isLoggedIn.first_name}</p>
+                <p className='email'>{isLoggedIn.name}</p>
             </div>
         </div>
     </div>

@@ -15,7 +15,7 @@ const NewPassword = () => {
 
   const config = {
     headers: {
-      'Authorization': `Bearer ${Cookies.get('access_token')}`
+      'Authorization': `Bearer ${Cookies.get('refresh_token')}`
     },
   };
 

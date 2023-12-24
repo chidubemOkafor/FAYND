@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import curve from '../../assets/curve.svg'
 import '../email verification/EmailVerification.css'
 import singleLogo from '../../assets/Fynd_single.png'
@@ -9,6 +9,7 @@ import './ChooseScreen.css'
 import { Link } from 'react-router-dom'
 
 const EmailVerification = () => {
+
   return (
     <div className='main_verification_div'>
         <div className='background_curve'>
@@ -17,17 +18,16 @@ const EmailVerification = () => {
             </div>
         </div>
         
-    <div className='right'>
-        <img src={fayndLogo} className='fayndLogo'/>
-        <div>
-            <p className='verification_text'>Report your items!</p>
-            <p className='confirmation'>Register, report and track your item with us!</p>
-            <Link to={'/createaccount'}><button className='gray_button'>Create Account</button></Link>
-            <Link to={'/signin'}><button className='transparent_button'>Login</button></Link>
-            <p className='underline_button'>Register items</p>
-            
+        <div className='right'>
+            <div>
+                <p className='verification_text'>Report your items!</p>
+                <p className='confirmation'>Register, report and track your item with us!</p>
+                <Link to={'/createaccount'}><button className='gray_button'>Create Account</button></Link>
+                <Link to={'/signin'}><button className='transparent_button'>Login</button></Link>
+                <p className='underline_button'>Register items</p>
+                
+            </div>
         </div>
-    </div>
     </div>
   )
 }

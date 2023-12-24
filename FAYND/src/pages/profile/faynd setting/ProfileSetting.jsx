@@ -12,9 +12,7 @@ const ProfileSetting = () => {
                     <h1 className='heading_prof_text'>Profile Setting</h1>
                     <button className='save_button'>Save Changes</button>
                 </div>
-                <form>
-                    
-                </form>
+                <div>this is supposed to be workin</div>
             </div>
         </div>
     </div>
