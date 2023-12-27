@@ -10,9 +10,21 @@ import faynd from '../../assets/Fynd_single.png'
 import { Link } from 'react-router-dom'
 import profileuser from '../../assets/profile2.svg'
 import { loginContext } from '../../contexts/loginContext'
+import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom'
 
 const SideBar = () => {
-    const {isLoggedIn} = useContext(loginContext)
+  const navigate = useNavigate()
+  const {isLoggedIn} = useContext(loginContext)
+
+  const handleLogOut = () =>  {
+    Cookies.remove("refresh_token")
+    if(!Cookies.get("refresh_token")) {
+      navigate('/home')
+    } else {
+      alert("did not work")
+    }
+  }
 
   return (
     <div className='sidebar_div_main'>
@@ -25,7 +37,7 @@ const SideBar = () => {
             <Link to='/profile/notification'><li className='list_side_icon'><img src={bellicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Notification</p></li></Link>
             <li className='list_side_icon'><img src={priceicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Pricing</p></li>
             <Link to='/profile/items'><li className='list_side_icon'><img src={itemicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Items</p></li></Link>
-            <li className='list_side_icon'><img src={logouticon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Logout</p></li>
+            <li className='list_side_icon'><img src={logouticon} alt='icon' className='sidebar_icons'/><p className='sidebar_text' onClick={handleLogOut}>Logout</p></li>
         </ul>
         <div className='profile_pic_div'>
             <img src={isLoggedIn.data?.image_url == null ? profileuser : isLoggedIn.data?.image_url} alt="woman pic" className='profileWoman' />

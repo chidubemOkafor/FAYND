@@ -24,7 +24,7 @@ const Hero = () => {
            : 
            <div className='enter_email_div'>
               <input type='email' className='hero_input' placeholder='Enter your Email address'/>
-              <Link to={'/reportpage'}><button className='hero_button'>Continue</button></Link>
+              <button className='hero_button'>Continue</button>
            </div>
            }
           <div className='box_rot'/>

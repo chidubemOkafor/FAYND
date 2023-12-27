@@ -21,43 +21,12 @@ import { loginContext } from './contexts/loginContext';
 import { dataContext } from './contexts/dataContext'
 import { authContext } from './contexts/authContext';
 import ReportedAlready from './pages/congratulation/ReportedAlready';
-import axios from 'axios'
-import Cookies from 'js-cookie';
 
 function App() {
-  const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
   const [email, setEmail] = useState("")
   const [isLoggedIn, setIsLoggedIn] = useState({})
   const [confirmData, setConfirmData] = useState({})
   const [isAuth, setIsAuth] = useState(false)
-
-  const config = {
-    headers: {
-      'Authorization': `Bearer ${Cookies.get('refresh_token')}`
-    }
-  }
-
-  useEffect(() => {
-    (async() => {
-      try {
-        const response = await axios.get(`${url}api/v1/users/profile`,config)
-        setIsLoggedIn(response.data)
-      } catch (error) {
-        console.log(error)
-      }
-    })()
-  },[])
-
-  useEffect(() => {
-    const checkAuth = () => {
-      if (Cookies.get('refresh_token')) {
-        setIsAuth(true)
-      } else {
-        setIsAuth(false)
-      }
-    }
-    checkAuth()
-  },[])
 
   return (
     <>
