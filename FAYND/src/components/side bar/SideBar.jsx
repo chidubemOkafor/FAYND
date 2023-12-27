@@ -7,19 +7,20 @@ import priceicon from '../../assets/sidebar icons/priceicon.svg'
 import itemicon from '../../assets/sidebar icons/itemicon.svg'
 import logouticon from '../../assets/sidebar icons/logouticon.svg'
 import faynd from '../../assets/Fynd_single.png'
-import profileWoman from '../../assets/profileWoman.svg'
 import { Link } from 'react-router-dom'
-import {loginContext} from '../../contexts/loginContext.js'
+import profileuser from '../../assets/profile2.svg'
+import { loginContext } from '../../contexts/loginContext'
 
 const SideBar = () => {
     const {isLoggedIn} = useContext(loginContext)
+
   return (
     <div className='sidebar_div_main'>
         <div>
             <Link to={'/home'}><img src={faynd} alt='faynd logo' className='faynd_mini_logo'/></Link>
         </div>
         <ul>
-            <li className='list_side_icon'><img src={profileicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Profile</p></li>
+            <Link to={'/profile/settings'}><li className='list_side_icon'><img src={profileicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Profile</p></li></Link>
             <li className='list_side_icon'><img src={messageicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Message</p></li>
             <Link to='/profile/notification'><li className='list_side_icon'><img src={bellicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Notification</p></li></Link>
             <li className='list_side_icon'><img src={priceicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Pricing</p></li>
@@ -27,10 +28,10 @@ const SideBar = () => {
             <li className='list_side_icon'><img src={logouticon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Logout</p></li>
         </ul>
         <div className='profile_pic_div'>
-            <img src={profileWoman} alt="woman pic" className='profileWoman' />
+            <img src={isLoggedIn.data?.image_url == null ? profileuser : isLoggedIn.data?.image_url} alt="woman pic" className='profileWoman' />
             <div>
-                <p className='name'>{isLoggedIn.first_name}</p>
-                <p className='email'>{isLoggedIn.name}</p>
+                <p className='name'>{isLoggedIn.data?.first_name} {isLoggedIn.data?.other_names}</p>
+                <p className='email'>{isLoggedIn.data?.email}</p>
             </div>
         </div>
     </div>

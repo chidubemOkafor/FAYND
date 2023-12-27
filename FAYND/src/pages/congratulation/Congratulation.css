@@ -6,7 +6,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 25px;
-    width: 433px;
+    width: 40em;
     text-align: center;
 }
 
@@ -18,10 +18,53 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 25px; /* 156.25% */
+    line-height: 25px;
     text-decoration-line: underline;
 }
 
+.main_text_report {
+    color: var(--Neutral-Neutral-800, rgba(46, 21, 27, 0.90));
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+}
+
+.second_main_text_report {
+    color: var(--Neutral-Neutral-700, rgba(46, 21, 27, 0.80));
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.alert {
+    display: flex;
+    width: 500px;
+    height: 70px;
+    padding: 16px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid var(--Neutral-Neutral-300, rgba(46, 21, 27, 0.40));
+    background: var(--2f4454, #EAECEE);
+}
+
+
+.heading_account {
+    text-align: center;
+}
+
+.inner_cont_div {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
 .vin_TEXT {
     color: var(--black, #2E151B);
     font-family: Poppins;

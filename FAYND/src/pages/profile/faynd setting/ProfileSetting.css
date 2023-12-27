@@ -1,78 +1,250 @@
-.main_profile {
+.main_profile_div_top {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-}
-
-.profile_input{
-    display: flex;
-    max-width: 100%; 
-height: 20px;
-padding: 10px;
-align-items: center;
-gap: 10px;
-flex-shrink: 0;
-border-radius: 4px;
-border: 1px solid rgba(46, 21, 27, 0.50);
-}
-
-.profile_info_div {
-    display: flex;
-}
-
-.profile_form{
-    display: flex;
     align-items: center;
-    justify-content: flex-start; 
-    width: 100%;
-    position: relative;
-}
-
-.main_profile_div {
-    display: flex;
-}
-
-.second_main_profile {
-     width: 832px;
-     height: 100vh;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-}
-
-.heading_profile {
-    display: flex;
-    align-items: center;
+    width: auto;
     justify-content: space-between;
-    width: 832px;
 }
 
-.heading_prof_text {
+.main_profile_div2 {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    margin-left: 22em;
+    margin-bottom: 45em;
+}
+
+.underline_div {
+    width: auto;
+    height: 1px;
+    background: rgba(46, 21, 27, 0.20);
+}
+
+.yourphoto {
     color: var(--black, #2E151B);
-    font-family: Poppins;
-    font-size: 32px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
     font-style: normal;
     font-weight: 500;
-    line-height: 25px; /* 78.125% */
+    line-height: 18px; /* 75% */
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+    margin-bottom: 21px;
+    text-align: start;
+}
+
+.update_image_div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 31px;
+}
+
+.edit_div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+}
+
+.profile_image {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 60px;
+    border: 2px solid var(--black, #2E151B);
+}
+.main_profile_div3 {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+}
+
+.inner_form_div1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_button {
+    border-radius: 16px;
+    background: var(--Brand-Primary, #2F4454);
+    padding :10px 20px;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; /* 138.462% */
     letter-spacing: 0.8px;
     text-transform: capitalize;
 }
 
-.save_button {
-    border-radius: 16px;
-    background: var(--Brand-Primary, #2F4454);
-    width: 145.938px;
-    height: 46px;
-    color: #FFF;
-text-align: center;
-font-family: Inter;
-font-size: 13px;
-font-style: normal;
-font-weight: 700;
-line-height: 18px; /* 138.462% */
-letter-spacing: 0.8px;
-text-transform: capitalize;
-border: 0;
+.profile_button:hover {
+    background: var(--Brand-Primary, rgb(48, 69, 85,0.9))
+}
+
+.profile_input {
+    display: block;
+    width: 360px;
+    height: 50px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 21, 27, 0.50);
+    margin: 0;
+
+}
+
+.profile_email {
+    display: flex;
+    width: auto;
+    height: 20px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 21, 27, 0.50);
+}
+
+.profile_email_div {
+    width: 780px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile_select {
+    display: block;
+    width: 380px;
+    height: 40px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 21, 27, 0.50);
+    margin: 0;
+}
+
+.profile_textarea {
+    max-width: auto;
+    min-width: auto;
+    min-height: 172px;
+    max-height: 172px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 21, 27, 0.50);
+}
+
+.profile_input_div {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+}
+
+.profile_label {
+    color: var(--black, #2E151B);
+    text-align: start;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+}
+
+.edit_div div {
+    display: flex;
+    gap: 5px;
+}
+
+.delete {
+    color: rgba(47, 68, 84, 0.50);
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+    cursor: not-allowed;
+}
+
+.update {
+    color: var(--brand-2-900, #DA7893);
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.edit_photo {
+    color: var(--black, #2E151B);
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+}
+
+.photo_div {
+    margin: 100px 0px;
+}
+
+.profile_form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 144px;
+}
+
+
+.drag_and_drop_div2 {
+    width: 655px;
+    height: 244px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #F5F5F5;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.drag_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.optional {
+    color: rgba(46, 21, 27, 0.40);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
 }

@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { loginContext } from '../../contexts/loginContext'
+import Cookies from 'js-cookie'
 
 const SignIn = () => {
     const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
@@ -36,6 +37,8 @@ const SignIn = () => {
         const response  =  await axios.post(url + 'api/v1/users/login', data)
             if(response.data.message === "Login successful") {
                 setIsLoggedIn(response.data.data)
+                Cookies.set("refresh_token",response.data.data.refresh_token,{ expires: 7, sameSite: 'strict' })
+                console.log(response)
                 navigate('/home')
             }
         } catch (error) {

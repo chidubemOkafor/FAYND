@@ -1,53 +1,35 @@
-import React,{useState,useRef, useEffect} from 'react'
+import React,{useState,useRef,useContext} from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import './ReportPage.css'
 import arrow_up from '../../assets/arrow_up.svg'
 import { json, useNavigate } from 'react-router-dom';
 import InputMask from 'react-input-mask';
-import Cookies from 'js-cookie';
+import { dataContext } from '../../contexts/dataContext';
 
 const ReportPage = () => {
-        const formRef = useRef(null) 
-        const navigate = useNavigate()
-        const [data, setData] = useState({})
-        const [base64Data, setBase64Data] = useState("")
+    const {setConfirmData} = useContext(dataContext)
+    const formRef = useRef(null) 
+    const navigate = useNavigate()
+    const [data, setData] = useState({})
 
-        const handleChange = (event) => {
-            const { name, value, type, files } = event.target;
-        
-            setData((prevData) => ({
-                ...prevData,
-                [name]: type === 'file' ? files[0] : value,
-            }));
-        }
+    const handleChange = (event) => {
+        const { name, value, type, files } = event.target;
+        setData((prevData) => ({
+            ...prevData,
+            [name]: type === 'file' ? files[0] : value,
+        }));
+    }
 
-        console.log(data.image_file)
+    const handleConfirmation = (e) => {
+        e.preventDefault() 
+        // i'll set the data to local storage here
+        setConfirmData(data)
+        navigate('/reportpage/confirmation')
+    }
 
-        
-            const convertToBase64 = () => {
-                if (data.image_file) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        const base64 = event.target.result;
-                       localStorage["base64Image"] = base64;
-                    }
-                    reader.readAsDataURL(data.image_file);
-                } else {
-                    console.log("nothing yet");
-                }
-            };
-
-        const handleConfirmation = (e) => {
-            e.preventDefault() 
-            // i'll set the data to local storage here
-            localStorage.setItem('reportData', JSON.stringify(data))
-            convertToBase64()
-            navigate('/reportpage/confirmation')
-        }
-
-  return (
+    return (
     <div>
-    <Navbar/>
+        <Navbar/>
     <div className='create_account_main'>
         <div className='inner_container'>
             <p className='heading_account'>Report an Item</p>
@@ -132,7 +114,6 @@ const ReportPage = () => {
                         <p>Click to ensure this details are correct before submitting</p>
                     </div>
                     <button className='btn_report' type='submit'>Save and Continue</button>
-                    {data.image_file && <img src={URL.createObjectURL(data.image_file)} alt='image'/>}
                 </div>
             </form>
            

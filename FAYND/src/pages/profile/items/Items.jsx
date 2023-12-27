@@ -15,7 +15,7 @@ const Items = () => {
         {showDetail && <Takedown showDetail={showDetail} toggle={toggle}/>}
     <div className='main_profile_div'>
         <SideBar/>
-        <div className='main_profile'>
+        <div className='main_profile_div2'>
             <div className='second_main_profile'>
                 <div>
                     <p className='firsttext'>Hi! Mercy</p>

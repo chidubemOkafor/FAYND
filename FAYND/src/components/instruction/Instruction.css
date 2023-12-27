@@ -1,0 +1,110 @@
+.instruction_title {
+    color: var(--black, #2E151B);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px; /* 100% */
+    width: 50%;
+}
+
+.instruction_title2 {
+    color: var(--Neutral-Neutral-600, rgba(46, 21, 27, 0.70));
+    text-align: center;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 37px; /* 154.167% */
+    width: 668px;
+    opacity: 0.9;
+    margin-top: 20px;
+    margin-bottom: 5em;
+}
+
+.add_margin_top {
+    margin-top: 100px;
+}
+
+.instruction_span {
+    opacity: 0.9;
+    color: var(--brand-2-900, #DA7893);
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 37px;
+    cursor: pointer;
+}
+
+.main_divcard {
+    width: 400px;
+    height: 80px;
+    flex-shrink: 0;
+    box-shadow: 2px 2px 3px 0px rgba(62, 1, 62, 0.21);
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+}
+
+.green_div {
+    transform: rotate(-26.791deg);
+    border: 1px solid var(--Neutral-Border, #D5DADD);
+    background: linear-gradient(94deg, rgba(55, 110, 111, 0.35) -2.47%, #376E6F 118.98%);
+    margin-right: 29em;
+    margin-top: 10em;
+    position: absolute;
+}
+
+.red_div {
+    border: 1px solid #D7D7D7;
+    background: linear-gradient(94deg, rgba(218, 120, 147, 0.90) 7.57%, rgba(46, 21, 27, 0.90) 73.65%);
+    box-shadow: 2px 4px 3px 0px rgba(62, 1, 62, 0.21);
+    transform: rotate(32.419deg);
+    margin-left: 25em;
+    margin-bottom: 5em;
+}
+
+.brown_div {
+    border: 1px solid #D7D7D7;
+    background: #2E151B;
+}
+
+.divcard_title {
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.divcard_text {
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px; /* 150% */
+    opacity: 0.87;
+    width: 315.382px;
+}
+
+.bellcard {
+    transform: rotate(26.791deg);
+    border-radius: 10px;
+    fill: linear-gradient(94deg, rgba(55, 110, 111, 0.35) -2.47%, #376E6F 118.98%);
+}
+
+.bellcard2 {
+    transform: rotate(56.5deg);
+    flex-shrink: 0;
+}
+
+.bellcard3 {
+    padding: 7px;
+}

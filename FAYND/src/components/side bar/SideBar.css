@@ -6,7 +6,14 @@
     background: var(--black, #2E151B);
     width: 360px;
     height: 100vh;
+    position: fixed;
+}
 
+.sidebar_div_main ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 160px;
 }
 
 .sidebar_icons {
@@ -20,6 +27,7 @@
     align-items: center;
     cursor: pointer;
     padding-left: 20px;
+    height: 40px;
 }
 
 @keyframes delay {
@@ -47,14 +55,13 @@
 
 .sidebar_text {
     color: var(--2f4454, #EAECEE);
-font-family: Poppins;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 25px; /* 178.571% */
-letter-spacing: 0.8px;
-text-transform: capitalize;
-margin-bottom: 15px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px; /* 178.571% */
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
 }
 
 .faynd_mini_logo {
@@ -72,7 +79,8 @@ margin-top: 5vh;
 .profileWoman {
     border-radius: 60px;
     border: 2px solid var(--2f4454, #EAECEE);
-
+    width: 60px;
+    height: 60px;
 }
 
 .name {

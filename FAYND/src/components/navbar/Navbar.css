@@ -46,3 +46,36 @@
     display: flex;
     gap: 70px;
 }
+
+.create_account_div {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+a {
+    color: var(--black, #2E151B);
+}
+
+.signin_buttton {
+    color: var(--Brand-Brand-900, #376E6F);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.grayButton2 {
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color:  #2F4454;
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}

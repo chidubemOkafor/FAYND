@@ -63,7 +63,7 @@ const Notification = () => {
                         </div>
                         <div>
                             <p>Notifications</p>
-                            <div className='scrollable_notification_bar'>
+                            {notifications.length > 0 ?<div className='scrollable_notification_bar'>
                             {notifications.map((notification, index)=> (
                                 <div key={index}  className='notification_rectangle' onClick={() => selectNotificationToDisplay(notification.id)}>
                                     <img src={notification.type === "alert" ? systems : customerService } className={notification.type === "alert" ? 'image_card_div2' : 'image_card_div'}/>
@@ -73,10 +73,10 @@ const Notification = () => {
                                     </div> 
                                 </div>
                                 ))}
-                            </div>
+                            </div>:<div className='scrollable_notification_bar2'><p className='notification_title'> you don't have a notification</p></div>}
                         </div>
                     </div>
-                    <div className='shownotification_div'>
+                   {notifications.length > 0 ? <div className='shownotification_div'>
                         <div>
                             <h1 className='shownotification_div_title'>{notifications[displayId].title}</h1>
                             <div className='underline'></div>
@@ -85,7 +85,7 @@ const Notification = () => {
                         <div className='button_noti_div'>
                             <button className='newbutton'>Mark as read</button>
                         </div>
-                    </div>
+                    </div>: <div className='shownotification_div2'><p className='notification_title'> you don't have a notification</p></div>}
                     </div>
             </div>
            

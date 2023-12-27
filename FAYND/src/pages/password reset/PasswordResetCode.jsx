@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import './PassswordReset.css'
-import { Link } from 'react-router-dom'
 import AuthCode from 'react-auth-code-input'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'

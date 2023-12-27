@@ -74,7 +74,7 @@
 
 .hero_button {
     display: flex;
-    width: 329px;
+    width: 352px;
     height: 61px;
     padding: 8px 30px;
     justify-content: center;
@@ -82,7 +82,7 @@
     gap: 10px;
     flex-shrink: 0;
     border-radius: 8px;
-    background: var(--Brand-Primary, #663851);
+    background: var(--Brand-Primary, #2F4454);
     color: #E8F0FE;
     font-family: Poppins;
     font-size: 14px;
@@ -99,4 +99,33 @@
     flex-direction: column;
     gap: 24px;
     margin-left: 15vh;
+}
+
+.hero_input {
+    display: flex;
+    width: 329px;
+    height: 58px;
+    padding: 0px 10px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--black, #2E151B);
+    background-color: transparent;
+}
+
+.hero_button::placeholder {
+    color: var(--Neutral-Neutral-700, rgba(46, 21, 27, 0.80));
+    font-family: DM Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.4;
+}
+
+.enter_email_div {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }

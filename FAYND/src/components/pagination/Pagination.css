@@ -1,0 +1,29 @@
+.main_pagination {
+    display: flex;
+    gap: 9px;
+    margin-top: 44px;
+}
+
+.pagination_button {
+    display: flex;
+    width: 45.758px;
+    height: 48.45px;
+    padding: 8.972px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8.972px;
+    border: 0.897px solid var(--Brand-2-700, rgba(218, 120, 147, 0.80));
+    background: #FFF;
+    color: var(--Brand-Primary, #2F4454);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26.917px; /* 192.262% */
+}
+
+.selectButton {
+    background: var(--primary-color, #2E151B);
+    color: #FFF;
+}
