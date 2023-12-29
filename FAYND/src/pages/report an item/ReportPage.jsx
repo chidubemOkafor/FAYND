@@ -55,7 +55,7 @@ const ReportPage = () => {
                                 <option className='option' value="Smartphone">Smartphone</option>
                                 <option className='option' value="Electronics">Electronics</option>
                                 <option className='option' value="Console">Console</option>
-                                <option className='option' value="Musical Instrument">Musical Instrument</option>
+                                <option className='option' value="Musical Instrdivument">Musical Instrument</option>
                                 <option className='option' value="Pet">Pet</option>
                                 <option className='option' value="Others">Others</option>
                             </select>

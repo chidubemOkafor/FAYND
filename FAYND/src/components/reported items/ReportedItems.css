@@ -38,6 +38,7 @@
     font-weight: 400;
     line-height: 45.182px; /* 251.011% */
     margin-bottom: 24px;
+    text-align: center;
 }
 
 .fayndLogo2 {
@@ -115,4 +116,55 @@
     font-style: normal;
     font-weight: 400;
     line-height: 26.917px; /* 192.262% */
+}
+
+@media (max-width: 724px) {
+    .grid_items {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .thumbnail {
+        width: 170px;
+        height: 170.469px;
+        flex-shrink: 0;
+    }
+    .name_of_item {
+        color: var(--black, #2E151B);
+        font-family: Poppins;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px; /* 180% */
+    }
+    .location_of_item {
+        color: #191919;
+        font-family: Poppins;
+        font-size: 8px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 14.4px; /* 180% */
+    }
+    .items_title {
+        color: var(--black, #2E151B);
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 27.109px; /* 150.607% */
+        border-bottom: 1px solid var(--black, #2E151B);
+        width: 152px;
+        height: 10px;
+    }
+    .items_sub_title {
+        color: var(--Neutral-Neutral-600, rgba(46, 21, 27, 0.70));
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 133.333% */
+        margin-top: 15px;
+    }
+    .mainReportedItems {
+        margin-top: 2em;
+    }
 }

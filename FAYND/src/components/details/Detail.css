@@ -1,0 +1,133 @@
+.main_background {
+    background-color: rgb(0, 0, 0,0.5);
+    height: 100vh;
+    width: 100%;
+    z-index: 30;
+    position: fixed;
+
+}
+
+.deleted {
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+}
+
+.detail_box {
+    background-color: white;
+    height: 564px;
+    position: relative;
+    margin-top: 5em;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    animation: popup 0.5s forwards;
+}
+
+.remove_detail_box {
+    animation: popdown 0.5s forwards;
+}
+.divider {
+    width: auto;
+    height: 1px;
+    opacity: 0.5;
+    background: rgba(0, 0, 0, 0.50);
+}
+
+.title_response {
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 13.5em;
+}
+
+.title_div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image_size {
+    width: 250px;
+    height: 200px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    justify-content: center;
+}
+
+.title_detail {
+    color: var(--black, #2E151B);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.7;
+}
+
+.email_detail {
+    width: 300px;
+    margin-top: 10px;
+    gap: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.detail_button {
+    position: absolute;
+    bottom: 1em;
+}
+.detail {
+    color: var(--black, #2E151B);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.detail_text {
+    color: var(--black, #2E151B);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.7;
+}
+
+/* this is for animation */
+
+@keyframes popup {
+    0% {
+        transform: translateY(590px);
+    }
+    100% {
+        transform: translateY(0)
+    }
+}
+
+@keyframes popdown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(590px)
+    }
+}

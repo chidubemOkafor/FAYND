@@ -292,3 +292,10 @@ p {
     font-weight: 400;
     line-height: normal;
 }
+
+@media (max-width: 724px) {
+    .create_account_main {
+        background-color: white;
+        background-image: url("");
+    }
+}

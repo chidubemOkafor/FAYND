@@ -1,4 +1,4 @@
-import React,{useContext,useEffect} from 'react'
+import React,{useContext,useEffect,useState} from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import Hero from '../../components/hero/Hero'
 import ReportedItems from '../../components/reported items/ReportedItems'
@@ -10,18 +10,14 @@ import { loginContext } from '../../contexts/loginContext'
 import Instruction from '../../components/instruction/Instruction'
 import Cookies from 'js-cookie'
 import axios from 'axios'
+import Detail from '../../components/details/Detail'
+import NavsideBar from '../../components/navbar/NavsideBar'
 
 const LandingPage = () => {
   const {isAuth, setIsAuth} = useContext(authContext)
-  const {setIsLoggedIn} = useContext(loginContext)
-  const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
-
-  const config = {
-    headers: {
-      'Authorization': `Bearer ${Cookies.get('refresh_token')}`
-    }
-  }
-
+  const [delayClose, setDelayClose] = useState(false)
+  const [close, setClose] = useState(true)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const checkAuth = () => {
@@ -34,25 +30,16 @@ const LandingPage = () => {
     checkAuth()
   },[])
 
-  useEffect(() => {
-    (async() => {
-      try {
-        const response = await axios.get(`${url}api/v1/users/profile`,config)
-        setIsLoggedIn(response.data)
-      } catch (error) {
-        console.log(error)
-      }
-    })()
-  },[])
-
   return (
     <div>
-        <Navbar/>
+        {open && <NavsideBar open={open} setOpen={setOpen} delayClose={delayClose} setDelayClose={setDelayClose}/>}
+        {!close && <Detail close={close} setClose={setClose}/>}
+        <Navbar open={open} setOpen={setOpen}/>
         <Hero/>
         {!isAuth && <Instruction/>}
-        <ReportedItems/>
-        {isAuth && <FoundItems/>}
-        <OurUsers/>
+        <ReportedItems  close={close} setClose={setClose}/>
+        {isAuth && <FoundItems  close={close} setClose={setClose}/>}
+        {/* <OurUsers/> */}
         <Footer/>
     </div>
   )

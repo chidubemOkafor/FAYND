@@ -1,6 +1,5 @@
 .footer_main_div {
     width: 100%;
-    flex-shrink: 0;
     background: var(--black, #2E151B);
 }
 
@@ -47,7 +46,7 @@ ul {
 .control_footer_div {
     display: flex;
     margin-left: 8%;
-    gap: 10%;
+    gap: 5%;
     padding-top: 7%;
 }
 
@@ -119,10 +118,116 @@ ul {
     margin-bottom: 50px;
 }
 
-.footer_title {
+.inner_footer_div {
+    display: flex;
+    margin-left: 8%;
+    justify-content: space-between;
+    width: 40%;
+}
 
+.footer_title {
+    line-height: 4em;
 }
 
 .logo_find {
 
+}
+
+@media (max-width: 740px) {
+    .footer_main_div {
+        height: 408px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+    }
+    .FAYND_white {
+        width: 92px;
+        height: 45px;
+    }
+    .control_footer_div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+        gap: 2em;
+    }
+
+    .footer_main_div {
+        display: flex;
+        flex-direction: column;
+        height: 408px;
+    }
+    .logo_divs {
+        display: flex;
+        flex-direction: column;
+    }
+    .social_media {
+        color: var(--White, #FFF);
+        font-family: Poppins;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 6.5em;
+    }
+    .inner_logo_divs {
+        justify-content: space-between;
+    }
+    .footer_title {
+        color: var(--White, #FFF);
+font-family: Poppins;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 15px */
+    }
+    .divider {
+        margin-top: 10px;
+    }
+    .logo_text {
+        color: #FFF;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 8px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 315px;
+        height: 24px;
+        flex-shrink: 0;
+    }
+    .logo_find {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .social_media {
+        color: var(--White, #FFF);
+        font-family: Poppins;
+        font-size: 10px;
+        width: auto;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 15px */
+    }
+    .terms_div {
+        gap: 0px;
+        width: 100%;
+        margin-top: 2em;
+        justify-content: space-between;
+    }
+    .logo_find {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .inner_footer_div {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
 }

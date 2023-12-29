@@ -79,3 +79,108 @@ a {
     line-height: normal;
     cursor: pointer;
 }
+
+@media (max-width: 724px) {
+    .top_image {
+        display: flex;
+        width: 80px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+}
+
+
+/* this is for the navsidebar */
+.main_nav_sidebar {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.40);
+    z-index: 30;
+}
+
+.nav_sidebar {
+    width: 55%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    padding: 15px;
+    padding-top: 45px;
+    animation: open 0.5s ease-in-out;
+}
+
+.Menu {
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.menu_div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_bar_name {
+    color: #1E1E1E;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.sign {
+    color: var(--Brand-Brand-900, #376E6F);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.ul_main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    gap: 24px;
+    margin-right: 5em;
+}
+
+.close_animate {
+    animation: close 0.5s linear;
+}
+
+.cancel {
+    cursor: pointer;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+@keyframes open {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes close {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

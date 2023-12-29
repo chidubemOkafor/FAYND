@@ -16,29 +16,28 @@ const Footer = () => {
                 <img src={FAYND} className='FAYND_white' />
                 <p className='logo_text'>FYND is an online platform  that assist in looking for missing item, just by reporting the item missing.</p>
             </div>
-            <div>
-            <ul className='footer_title'>
-                <li className='title'>Profile</li>
-                <li>My items</li>
-                <li>Profile</li>
-                <li>Notification</li>
-                <li>Message</li>
-            </ul>
+            <div className='inner_footer_div'>
+                <ul className='footer_title'>
+                    <li className='title'>Profile</li>
+                    <li>My items</li>
+                    <li>Profile</li>
+                    <li>Notification</li>
+                    <li>Message</li>
+                </ul>
+                <ul className='footer_title'>
+                    <li className='title'>Features</li>
+                    <li>Report an item</li>
+                    <li>FAQs</li>
+                    <li>About us</li>
+                    <li>Confirm an item</li>
+                </ul>
+                <ul className='footer_title'>
+                    <li className='title'>Contact Us</li>
+                    <li>Email Address</li>
+                    <li>Address</li>
+                    <li>Phone Number</li>
+                </ul>
             </div>
-            <ul className='footer_title'>
-                <li className='title'>Features</li>
-                <li>Report an item</li>
-                <li>FAQs</li>
-                <li>About us</li>
-                <li>Confirm an item</li>
-            </ul>
-            <ul className='footer_title'>
-                <li className='title'>Contact Us</li>
-                <li>Email Address</li>
-                <li>Address</li>
-                <li>Phone Number</li>
-            </ul>
-            <div className='white_ring'/>
         </div>
         <div className='divider_container'>
             <div className='divider'></div>

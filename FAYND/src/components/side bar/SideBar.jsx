@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext,useEffect} from 'react'
 import './SideBar.css'
 import profileicon from '../../assets/sidebar icons/profileicon.svg'
 import messageicon from '../../assets/sidebar icons/messageicon.svg'
@@ -12,10 +12,12 @@ import profileuser from '../../assets/profile2.svg'
 import { loginContext } from '../../contexts/loginContext'
 import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const SideBar = () => {
   const navigate = useNavigate()
-  const {isLoggedIn} = useContext(loginContext)
+  const {isLoggedIn,setIsLoggedIn} = useContext(loginContext)
+  const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
 
   const handleLogOut = () =>  {
     Cookies.remove("refresh_token")
@@ -25,6 +27,23 @@ const SideBar = () => {
       alert("did not work")
     }
   }
+
+  const config = {
+    headers: {
+      'Authorization': `Bearer ${Cookies.get('refresh_token')}`
+    }
+  }
+
+  useEffect(() => {
+    (async() => {
+      try {
+        const response = await axios.get(`${url}api/v1/users/profile`,config)
+        setIsLoggedIn(response.data)
+      } catch (error) {
+        console.log(error)
+      }
+    })()
+  },[])
 
   return (
     <div className='sidebar_div_main'>

@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import './Takedown.css'
-import iphoneImage from '../../assets/Rectangle 3464054.png'
+import iphoneImage from '../../assets/phone.png'
 // this is the take down component
 const Takedown = (prop) => {
     const [ID] = useState('4950039403')

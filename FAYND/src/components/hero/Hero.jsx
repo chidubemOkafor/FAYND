@@ -14,8 +14,21 @@ import { Link } from 'react-router-dom'
 const Hero = () => {
   authContext
   const {isAuth} = useContext(authContext)
+  // const [width, setWidth] = useState(window.innerWidth);
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setWidth(window.innerWidth);
+  //   };
+  //   window.addEventListener('resize', handleResize);
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
+  
   return (
     <div className='pink_curve'>
+        <div className='screen'/>
         <div className='left_text_container'>
           <h1 className='hero_title'>Report your lost items</h1>
           <h2 className='h2_text'>Reliable and efficient platform for registration of items with unique identifier, reporting of stolen items and tracking them.</h2>

@@ -21,6 +21,7 @@ import { loginContext } from './contexts/loginContext';
 import { dataContext } from './contexts/dataContext'
 import { authContext } from './contexts/authContext';
 import ReportedAlready from './pages/congratulation/ReportedAlready';
+import Search from './pages/search/Search';
 
 function App() {
   const [email, setEmail] = useState("")
@@ -44,6 +45,7 @@ function App() {
             <Route path='/resetpassword/newpassword' element={<NewPassword/>}/>
             <Route path='/faq' element={<FAQ/>}/>
             <Route path='/home' element={<LandingPage/>}/>
+            <Route path='/search' element={<Search/>}/>
             <Route path='/reportpage' element={<ReportPage/>}/>
             <Route path='/reportpage/confirmation' element={<Confirmation/>}/>
             <Route path='/reportpage/confirmation/congratulation/:Rnum' element={<Congratulation/>}/>

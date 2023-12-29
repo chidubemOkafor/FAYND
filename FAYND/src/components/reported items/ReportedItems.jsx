@@ -10,11 +10,12 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 import Pagination from '../pagination/Pagination'
 
-const ReportedItems = () => {
+const ReportedItems = (prop) => {
     const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL
     const [data, setData] = useState([])
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(9); // Number of images to display per page
+    const [width, setWidth] = useState(window.innerWidth);
 
     const config = {
         headers: {
@@ -36,30 +37,43 @@ const ReportedItems = () => {
         })()
     },[])
 
-    console.log(data)
     const indexOfLastItem = currentPage * itemsPerPage;
-    // Logic to calculate the index of the first image on the current page
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    // Get the current images to display based on the calculated indices
     const currentItem = data.slice(indexOfFirstItem, indexOfLastItem);
-    console.log(currentItem)
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+//===================this is for responsiveness===================   
+
+    useEffect(() => {
+      const handleResize = () => {
+        setWidth(window.innerWidth);
+      };
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
+    const toggleDetail = () => {
+        prop.setClose(false)
+    }
+
+
   return (
     <div className='mainReportedItems'>
-        <div className='dots_and_logo'>
+        {width > 1024 && <div className='dots_and_logo'>
             <img src={bluedot}/>
             <img src={greendot}/>
-        </div>
+        </div>}
         <h1 className='items_title'>Reported Items</h1>
         <p className='items_sub_title'>Display of stolen items. you can search for more</p>
        
         <div className='faynd_div'>
-            <div className='dot_abs_div'>
+        {width > 1024 && <div className='dot_abs_div'>
             <img src={greendot}/>
             <img src={bluedot}/>
-            </div>
+            </div>}
         </div>
         <div className='grid_items'>
         {currentItem.map((item, index) => (<div key={index}>
@@ -69,7 +83,7 @@ const ReportedItems = () => {
                     <p className='name_of_item'>{item.model}</p>
                     <p className='location_of_item'>{item.last_location}</p>
                 </div>
-                <button className='details_button'>Details</button>
+                <button className='details_button' onClick={toggleDetail}>Details</button>
             </div>
             </div>))}
         </div>
