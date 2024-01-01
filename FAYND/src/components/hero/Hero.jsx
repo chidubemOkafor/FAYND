@@ -14,18 +14,7 @@ import { Link } from 'react-router-dom'
 const Hero = () => {
   authContext
   const {isAuth} = useContext(authContext)
-  // const [width, setWidth] = useState(window.innerWidth);
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setWidth(window.innerWidth);
-  //   };
-  //   window.addEventListener('resize', handleResize);
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, []);
-  
   return (
     <div className='pink_curve'>
         <div className='screen'/>

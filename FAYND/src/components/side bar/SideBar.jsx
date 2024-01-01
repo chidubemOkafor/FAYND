@@ -52,7 +52,7 @@ const SideBar = () => {
         </div>
         <ul>
             <Link to={'/profile/settings'}><li className='list_side_icon'><img src={profileicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Profile</p></li></Link>
-            <li className='list_side_icon'><img src={messageicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Message</p></li>
+            <Link to={'/profile/message'}><li className='list_side_icon'><img src={messageicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Message</p></li></Link>
             <Link to='/profile/notification'><li className='list_side_icon'><img src={bellicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Notification</p></li></Link>
             <li className='list_side_icon'><img src={priceicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Pricing</p></li>
             <Link to='/profile/items'><li className='list_side_icon'><img src={itemicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Items</p></li></Link>

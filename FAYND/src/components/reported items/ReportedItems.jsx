@@ -29,7 +29,6 @@ const ReportedItems = (prop) => {
                 const response = await axios.get(`${url}api/v1/items/get-all-items?is_found=false`,config)
                 if(response.data.message === "All items found have been retrieved") {
                     setData(response.data.data.items)
-                    console.log(response.data)
                 }
             } catch (error) {
                 console.error(error)

@@ -1,0 +1,8 @@
+.emoji_picker {
+  
+    bottom: 20%;
+    position: absolute;
+    display: flex;
+    padding-left: 20px;
+    align-items: end;
+}

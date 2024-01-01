@@ -1,55 +1,12 @@
-.table_top {
-    color: var(--black, #2E151B);
-    font-family: Poppins;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal; 
-    width: 50em;
-
+.main_profile_div2_5 {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    margin-left: 22em;
 }
 
-.secondtext {
-    color: #5C5C5C;
-font-family: DM Sans;
-font-size: 15px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
-
-.uploadedText {
-    color: var(--black, #2E151B);
-    font-family: Poppins;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    width: 832px;
-    margin-bottom: 5px;
-}
-
-.found {
-    color: var(--brand-2-900, #DA7893);
-font-family: Poppins;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-decoration-line: underline;
-cursor: pointer;
-margin-bottom: 10px;
-}
-
-.main_takedown {
-    position: absolute;
-}
-
-.first_table {
-    margin-bottom: 4em;
-}
-
-.firsttext {
+.name_title {
     color: #190019;
     font-family: Poppins;
     font-size: 24px;
@@ -58,29 +15,84 @@ margin-bottom: 10px;
     line-height: normal;
 }
 
-.second_main_profile div {
-    align-items: start;
-    width: 832px;
-    position: absolute;
-    top:44px
+.name_second_title {
+    color: #5C5C5C;
+    font-family: DM Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-.table_head {
-    background: rgba(218, 120, 147, 0.20);
+.table_main_div {
+    margin-top: 0.5em;
+}
+
+.table_main {
+    border-radius: 4px;
     height: 44px;
+    background: rgba(218, 120, 147, 0.20); 
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
 }
 
 .table_body {
     color: rgba(46, 21, 27, 0.70);
-    font-family: Poppins;
+    font-family: DM Sans;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;  
-    width: 90px;  
+    line-height: normal;
+    height: 44px;
+    border-bottom: 1px solid #D7DBDF;
 }
 
-.mainbody {
-    height: 44px;
-    border-bottom: 1px solid #000000;
+.sn {
+    width: 10%;
+    padding-left: 2em;
+}
+
+.missing_div {
+    width: 100%;
+    border-radius: 4px;
+    height: 500px;
+    animation: loading 2s infinite;
+    background: linear-gradient(to right, #eee, #fff, #eee);
+    background-size: 200% 100%; /* Increase the background size for smoother animation */
+}
+
+/* animation */
+@keyframes loading {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .successText {
+    margin-top: 5em;
+  }
+
+.not_found {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    background-color: #f4f3f3;
+    justify-content: center;
 }

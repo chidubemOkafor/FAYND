@@ -28,8 +28,7 @@ const ProfileSetting = () => {
     const formData = new FormData()
           formData.append('image_file',file)
     try {
-      const response = await axios.post(`${url}api/v1/users/upload`,formData,config)
-      console.log(response)
+      await axios.post(`${url}api/v1/users/upload`,formData,config)
       setFile(null)
       window.location.reload();
     } catch (error) {

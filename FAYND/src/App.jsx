@@ -22,6 +22,7 @@ import { dataContext } from './contexts/dataContext'
 import { authContext } from './contexts/authContext';
 import ReportedAlready from './pages/congratulation/ReportedAlready';
 import Search from './pages/search/Search';
+import Message from './pages/profile/messages/Message';
 
 function App() {
   const [email, setEmail] = useState("")
@@ -54,6 +55,7 @@ function App() {
             <Route path='/contactus' element={<ContactUs/>}/>
             <Route path='/profile/settings' element={<ProfileSetting/>}/>
             <Route path='/profile/items' element={<Items/>}/>
+            <Route path='/profile/message' element={<Message/>}/>
             <Route path='/profile/notification' element={<Notification/>}/>
             <Route path='/profile/message' element={<Notification/>}/>
           </Routes>

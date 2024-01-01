@@ -22,7 +22,6 @@ const Confirmation = () => {
         }
     },[])
 
-    console.log(confirmData)
     const formData = new FormData()
     formData.append("image_file", confirmData.image_file)
     formData.append("type", confirmData.type)
@@ -49,7 +48,6 @@ const Confirmation = () => {
                 console.log(response.data.data.item.reported_item_number)
                 navigate(`/reportpage/confirmation/congratulation/${response.data.data.item.reported_item_number}`)
             }
-            console.log(response)
         } catch (error) {
             if(error.response.data.message === "product has already been reported") {
                 navigate('/reportpage/confirmation/errorreporting')

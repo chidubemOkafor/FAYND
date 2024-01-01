@@ -1,9 +1,8 @@
 import React,{useState} from 'react'
 import './Takedown.css'
-import iphoneImage from '../../assets/phone.png'
-// this is the take down component
+import { changeFormat } from '../../custom hooks/convertDate'
+
 const Takedown = (prop) => {
-    const [ID] = useState('4950039403')
   return (
     <div className="background">
     <div className='main_takedown_div'>
@@ -15,7 +14,7 @@ const Takedown = (prop) => {
             <div className='takedown_wide'>
                 <div className='fake_input'>
                     <p>Item ID</p>
-                    <div className='fake_input_container'> <p>{ID}</p></div>
+                    <div className='fake_input_container'> <p>{prop.renderData.reported_item_number}</p></div>
                 </div>
                 <div className='fake_input'>
                     <p className='reasons_label'>Reasons</p>
@@ -28,18 +27,18 @@ const Takedown = (prop) => {
             <div className='takedown_wide'>
                 <div className='fake_input'>
                     <p>Date Registered</p>
-                    <div className='fake_input_container'> <p>24-10-2023</p></div>
+                    <div className='fake_input_container'> <p>{changeFormat(prop.renderData.updated_at,"dash")}</p></div>
                 </div>
                 <div className='fake_input'>
                     <p>Brand</p>
-                    <div className='fake_input_container'> <p>Iphone13pro</p></div>
+                    <div className='fake_input_container'> <p>{prop.renderData.model}</p></div>
                 </div>
             </div>
 
         </div>
 
         <div className='image_div2'>
-            <img src={iphoneImage} className='iphoneImage2' />
+            <img src={prop.renderData.image_url} className='iphoneImage2' />
         </div>
 
         <div className="checkbox_div">
@@ -48,7 +47,7 @@ const Takedown = (prop) => {
         </div>
 
         <div className='button_div'>
-            <button className='first_button' onClick={prop.toggle}>Cancel</button>
+            <button className='first_button' onClick={() => prop.setShowDetail(!prop.showDetail)}>Cancel</button>
             <button className='second_button'>Take down</button>
         </div>
     </div>

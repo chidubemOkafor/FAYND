@@ -15,8 +15,6 @@ const Pagination = (prop) => {
         }
     }
 
-console.log(length)
-
   return (
     <div className='main_pagination'>
         <button className='pagination_button' onClick={() => navigate("left")}><img src={arrowleft}/></button>
