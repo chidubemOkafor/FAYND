@@ -1,0 +1,126 @@
+.overlay_main_div {
+    background-color: rgba(115, 62, 77, 0.6);;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 40;
+}
+
+.search_detail_container {
+    height: auto;
+    border-radius: 4px;
+    padding: 10px 0px;
+    width: 30em;
+    background-color: white;
+    position: inherit;
+}
+
+.inner_cont_div2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancel_darker {
+    position: absolute;
+    transform: translateY(-2em);
+    margin-left: 90%;
+    cursor: pointer;
+}
+
+.item_image {
+    height: 12em;
+    width: 14em;
+    border-radius: 15px;
+    padding: 5px
+}
+
+.image_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16em;
+}
+
+.detail_button {
+    position: absolute;
+    bottom: 1em;
+    width: 90%;
+}
+
+.title_response {
+    color: var(--black, #2E151B);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 13.5em;
+}
+
+.show_detail_box {
+    animation: popup 0.5s forwards;
+}
+
+.email_detail {
+    width: 300px;
+    margin-top: 10px;
+    gap: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+
+.title_detail {
+    color: var(--black, #2E151B);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.7;
+}
+
+/* @media () {
+
+
+} */
+
+@media (max-width: 720px) and (min-width: 200px) {
+    .search_detail_container {
+        width: 100%;
+        bottom: 0;
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .btn_report {
+        width: 80%;
+    }
+}
+
+@keyframes popdown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(590px)
+    }
+}
+
+
+@keyframes popup {
+    0% {
+        transform: translateY(590px);
+    }
+    100% {
+        transform: translateY(0)
+    }
+}

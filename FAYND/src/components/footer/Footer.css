@@ -1,6 +1,8 @@
 .footer_main_div {
     width: 100%;
     background: var(--black, #2E151B);
+    z-index: 30;
+    position: relative;
 }
 
 .FAYND_white {

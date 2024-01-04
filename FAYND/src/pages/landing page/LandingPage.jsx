@@ -11,12 +11,14 @@ import Instruction from '../../components/instruction/Instruction'
 import Cookies from 'js-cookie'
 import axios from 'axios'
 import Detail from '../../components/details/Detail'
+import RealDetail from '../../components/details/RealDetail'
 import NavsideBar from '../../components/navbar/NavsideBar'
 
 const LandingPage = () => {
   const {isAuth, setIsAuth} = useContext(authContext)
   const [delayClose, setDelayClose] = useState(false)
-  const [close, setClose] = useState(true)
+  const [detail, setDetail] = useState(false)
+  const [detailData, setDetailData] = useState([])
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -33,12 +35,12 @@ const LandingPage = () => {
   return (
     <div>
         {open && <NavsideBar open={open} setOpen={setOpen} delayClose={delayClose} setDelayClose={setDelayClose}/>}
-        {!close && <Detail close={close} setClose={setClose}/>}
+        {detail && <RealDetail  setDetail={setDetail} detailData={detailData} detail={detail}/>}
         <Navbar open={open} setOpen={setOpen}/>
         <Hero/>
         {!isAuth && <Instruction/>}
-        <ReportedItems  close={close} setClose={setClose}/>
-        {isAuth && <FoundItems  close={close} setClose={setClose}/>}
+        <ReportedItems  setDetail={setDetail} detailData={detailData} detail={detail} setDetailData={setDetailData}/>
+        {isAuth && <FoundItems  setDetail={ setDetail} detailData={detailData} detail={detail}/>}
         {/* <OurUsers/> */}
         <Footer/>
     </div>

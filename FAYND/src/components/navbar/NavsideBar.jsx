@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import cancel_darker from '../../assets/cancel_darker.svg'
+import { Link } from 'react-router-dom'
 
 const NavsideBar = (prop) => {
 
@@ -18,12 +19,12 @@ const NavsideBar = (prop) => {
                 <img className='cancel' src={cancel_darker} alt="cancle" onClick={toggleSidebarClose}/>
             </div>
             <div className='ul_main'>
-                <span className='nav_bar_name'>Home</span>
-                <span className='nav_bar_name'>About us</span>
-                <span className='nav_bar_name'>search</span>
-                <span className='nav_bar_name'>FAQ</span>
-                <span className='nav_bar_name'>Profile</span>
-                <span className='sign'>Sign out</span>
+                <Link to={'/home'}><span className='nav_bar_name'>Home</span></Link>
+                <Link to={'/aboutus'}><span className='nav_bar_name'>About us</span></Link>
+                <Link to={'/search'}><span className='nav_bar_name'>search</span></Link>
+                <Link to={'/faq'}><span className='nav_bar_name'>FAQ</span></Link>
+                <Link><span className='nav_bar_name'>Profile</span></Link>
+                <Link><span className='sign'>Sign out</span></Link>
             </div>
         </div>
     </div>

@@ -18,6 +18,7 @@ const CreateAccount = () => {
   const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
   const navigate = useNavigate()
   const [countries, setCountries] = useState([]);
+  const [emailError, setEmailError] = useState("")
   const [selectedCountry, setSelectedCountry] = useState('');
   const [MatchingError, setMatchingError] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -46,11 +47,15 @@ const CreateAccount = () => {
         }
       }
     } catch (error) {
+      if (error.response.data.message === "Email is associated with another account, please use another Email.") {
+        setEmailError("account with email already exists")
+      }
       console.error(error);
     }
   };
 
   const handleChange = (e) => {
+    setEmailError("")
     const { name, value } = e.target;
     setData((prevData) => ({
       ...prevData,
@@ -163,6 +168,7 @@ const CreateAccount = () => {
                       placeholder="youremail@gmail.com"
                       required
                     />
+                    {emailError !== "" && <span className='span2' style={{marginTop: 85, position:'absolute'}}>{emailError}</span>}
                   </div>
                   <div className="input_div">
                     <label>Other Names*</label>

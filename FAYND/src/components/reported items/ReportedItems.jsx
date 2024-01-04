@@ -10,7 +10,9 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 import Pagination from '../pagination/Pagination'
 
+
 const ReportedItems = (prop) => {
+    //  setDetail={ setDetail} detailData={detailData} detail={detail} setDetailData={setDetailData}
     const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL
     const [data, setData] = useState([])
     const [currentPage, setCurrentPage] = useState(1);
@@ -54,8 +56,9 @@ const ReportedItems = (prop) => {
       };
     }, []);
 
-    const toggleDetail = () => {
-        prop.setClose(false)
+    const toggleDetail = (info) => {
+        prop.setDetailData(data[info])
+        prop.setDetail(true)
     }
 
 
@@ -82,7 +85,7 @@ const ReportedItems = (prop) => {
                     <p className='name_of_item'>{item.model}</p>
                     <p className='location_of_item'>{item.last_location}</p>
                 </div>
-                <button className='details_button' onClick={toggleDetail}>Details</button>
+                <button className='details_button' onClick={() => toggleDetail(index)}>Details</button>
             </div>
             </div>))}
         </div>

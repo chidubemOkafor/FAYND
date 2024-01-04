@@ -28,9 +28,7 @@
     animation: popup 0.5s forwards;
 }
 
-.remove_detail_box {
-    animation: popdown 0.5s forwards;
-}
+
 .divider {
     width: auto;
     height: 1px;
@@ -38,15 +36,6 @@
     background: rgba(0, 0, 0, 0.50);
 }
 
-.title_response {
-    color: var(--black, #2E151B);
-    font-family: Poppins;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    width: 13.5em;
-}
 
 .title_div {
     display: flex;
@@ -67,31 +56,10 @@
     justify-content: center;
 }
 
-.title_detail {
-    color: var(--black, #2E151B);
-    text-align: center;
-    font-family: Poppins;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    opacity: 0.7;
-}
 
-.email_detail {
-    width: 300px;
-    margin-top: 10px;
-    gap: 14px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 
-}
 
-.detail_button {
-    position: absolute;
-    bottom: 1em;
-}
+
 .detail {
     color: var(--black, #2E151B);
     text-align: center;
@@ -114,20 +82,4 @@
 
 /* this is for animation */
 
-@keyframes popup {
-    0% {
-        transform: translateY(590px);
-    }
-    100% {
-        transform: translateY(0)
-    }
-}
 
-@keyframes popdown {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(590px)
-    }
-}

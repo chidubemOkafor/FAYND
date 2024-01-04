@@ -19,14 +19,10 @@ const SideBar = () => {
   const {isLoggedIn,setIsLoggedIn} = useContext(loginContext)
   const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
 
-  const handleLogOut = () =>  {
-    Cookies.remove("refresh_token")
-    if(!Cookies.get("refresh_token")) {
-      navigate('/home')
-    } else {
-      alert("did not work")
-    }
-  }
+  const handleLogOut = () => {
+    Cookies.remove("refresh_token");
+    navigate('/home');
+  };
 
   const config = {
     headers: {
@@ -35,14 +31,15 @@ const SideBar = () => {
   }
 
   useEffect(() => {
-    (async() => {
+    const refresh = async() => {
       try {
         const response = await axios.get(`${url}api/v1/users/profile`,config)
         setIsLoggedIn(response.data)
       } catch (error) {
         console.log(error)
       }
-    })()
+    }
+    refresh()
   },[])
 
   return (

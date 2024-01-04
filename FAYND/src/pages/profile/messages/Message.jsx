@@ -7,6 +7,8 @@ import emoji from '../../../assets/emoji.svg'
 import sendmessage from '../../../assets/sendmessage.svg'
 import EmojiPicker from '../../../components/emoji_picker/EmojiPicker'
 import { CgSpinner } from "react-icons/cg";
+import io from 'socket.io-client'
+
 
 const Message = () => {
   const [displayEmoji, setDisplayEmoji] = useState(false)
@@ -14,8 +16,38 @@ const Message = () => {
   const {isLoggedIn} = useContext(loginContext)
   const [message, setMessage] = useState("")
   const [messagesArray, setMessagesArray] = useState([]);
-
+  
+  const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL
   const messagesContainerRef = useRef(null)
+
+
+
+  // const socket = io(url)
+
+  // useEffect(() => {
+  //   const socket = io(url);
+
+  //   // Connection opened
+  //   socket.on('connect', () => {
+  //     console.log('WebSocket connection opened');
+  //   });
+
+  //   // Connection closed
+  //   socket.on('disconnect', (reason) => {
+  //     console.log('WebSocket connection closed:', reason);
+  //   });
+
+  //   // Connection error
+  //   socket.on('error', (error) => {
+  //     console.error('WebSocket error:', error);
+  //   });
+
+  //   // Clean up the WebSocket connection when the component is unmounted
+  //   return () => {
+  //     socket.disconnect();
+  //     console.log('WebSocket connection closed during cleanup.');
+  //   };
+  // }, [url]);
   
   const handleSendMessage = async() => {
     const messageData = {
@@ -31,7 +63,6 @@ const Message = () => {
     setMessage((prevMessage) => prevMessage + emojiToAppend);
   }
 
-  console.log(messagesArray)
   return (
     <div className='main_profile_div'>
       <SideBar/>
