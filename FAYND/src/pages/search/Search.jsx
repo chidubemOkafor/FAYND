@@ -12,6 +12,7 @@ import Cookies from 'js-cookie'
 import drop_down from '../../assets/drop_down.svg'
 import { states } from './states'
 import RealDetail from '../../components/details/RealDetail'
+import { useDetectClickOutside } from 'react-detect-click-outside'
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("")
@@ -62,6 +63,8 @@ const Search = () => {
     setDetail(true)
   }
 
+  const ref = useDetectClickOutside({onTriggered: () => showLocations(false), disableClick: true})
+
    // Map the array of states to JSX elements
    const stateList = states.map((state, index) => (
     <div key={index} className='states' onClick={() => handleFilterState(state)}>
@@ -91,7 +94,7 @@ const Search = () => {
                     <img src={clear_search} alt="clear" className='clear' onClick={() => setSearchValue("")}/>
               </div>
               {locations && 
-              <div className='locations_dropdown_div'>             
+              <div ref={ref} className='locations_dropdown_div'>             
                 {stateList}
               </div>}
             </div>

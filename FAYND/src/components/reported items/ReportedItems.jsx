@@ -71,12 +71,6 @@ const ReportedItems = (prop) => {
         <h1 className='items_title'>Reported Items</h1>
         <p className='items_sub_title'>Display of stolen items. you can search for more</p>
        
-        <div className='faynd_div'>
-        {width > 1024 && <div className='dot_abs_div'>
-            <img src={greendot}/>
-            <img src={bluedot}/>
-            </div>}
-        </div>
         <div className='grid_items'>
         {currentItem.map((item, index) => (<div key={index}>
             <img className='thumbnail' src={item.image_url}/>

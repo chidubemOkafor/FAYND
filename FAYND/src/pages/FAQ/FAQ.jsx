@@ -1,12 +1,15 @@
-import Reactc,{useState} from 'react'
+import Reactc,{useState,useContext} from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import slantPink from '../../assets/slantPink.svg'
 import './FAQ.css'
 import uparrow from '../../assets/Group.svg'
 import downArrow from '../../assets/upArrow.svg'
 import Footer from '../../components/footer/Footer'
+import { sideBarContext } from '../../contexts/sideBarContext'
+import NavsideBar from '../../components/navbar/NavsideBar'
 
 const FAQ = () => {
+  const {openSidebar, setOpenSidebar} = useContext(sideBarContext)
   const [openText, setOpenText] = useState({
     "one": false,
     "two": false,
@@ -25,7 +28,8 @@ const FAQ = () => {
   
   return (
     <div>
-        <Navbar/>
+        {openSidebar && <NavsideBar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar}/>}
+        <Navbar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar}/>
             <img src={slantPink} className='slantPink'/>
             <div className='main_Faq_div'>
                 <div className='heading_faq'>

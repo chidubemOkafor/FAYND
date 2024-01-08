@@ -4,6 +4,8 @@ import eye from '../../assets/eye.svg'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
+import mobileCurve from '../../assets/mobile/mobileCurve.svg'
+import { checkScreen } from '../../custom hooks/checkScreen'
 
 const NewPassword = () => {
   const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
@@ -11,6 +13,8 @@ const NewPassword = () => {
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [erroMessage, setErrorMessage] = useState("")
+  const {windowSize} = checkScreen()
+  const {width} = windowSize
 
   const config = {
     headers: {
@@ -35,23 +39,26 @@ const NewPassword = () => {
   }
   return (
     <div className='create_account_main'>
+      {width <= 723 && <img src={mobileCurve} className={`mobileCurve ${'mobileCurve_signin'}`}/>}
       <form className='resetDIv' onSubmit={handlePasswordSubmit}>
         <p className='heading_account'>Set your new Password</p>
         <p className='second_text'>Your new password must be different from previous used passwords.</p>
+        <div className='newDiv'>
           <div className='input_div'>
-            <label>Password</label><br/>
+            <label>Password</label>
             <div className='input'><input value={password} onChange={(e) => setPassword(e.target.value)} className='password_input' type='password'/>
             <img src={eye} className='eyes'/>
             </div>
           </div>
           <div className='input_div'>
-            <label> Confirm Password*</label><br/>
+            <label> Confirm Password*</label>
             <div className='input'><input value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} className='password_input' type='password'/>
               <img src={eye} className='eyes'/>
             </div>
             {erroMessage != "" && <p className='span2'>{erroMessage}</p>}
           </div>
-        <button className='second_gray_button' type='submit'>Reset Password</button>
+        </div>
+        <button className={`second_gray_button ${'responsive_button2'}`} type='submit'>Reset Password</button>
       </form>
     </div>
   )

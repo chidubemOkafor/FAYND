@@ -1,10 +1,16 @@
 .resetDIv {
     background-color: white;
-    padding: 44px 122px 44px 122px;
+    padding: 44px 20px 44px 20px;
     border-radius: 6px;
+    width: 40em;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.create_account_main {
+    display: flex;
     align-items: center;
 }
 
@@ -29,6 +35,15 @@
     outline: none;
 }
 
+.newDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
 .otpDiv2 {
     width: 200px;
     height: 51px;
@@ -36,4 +51,28 @@
     display: flex ;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 500px) {
+
+    .heading_account {
+        font-size: 18px;
+    }
+
+    .second_text {
+        font-size: 12px;
+    }
+    
+    .resetDIv {
+        padding: 0;
+        width: 90%;
+    }
+
+    .resetDIv form {
+        width: 100%
+    }
+
+    .responsive_button2 {
+        width: 100%;
+    }
 }

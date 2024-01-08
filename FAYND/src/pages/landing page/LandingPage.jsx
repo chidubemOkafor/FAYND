@@ -13,13 +13,14 @@ import axios from 'axios'
 import Detail from '../../components/details/Detail'
 import RealDetail from '../../components/details/RealDetail'
 import NavsideBar from '../../components/navbar/NavsideBar'
+import { sideBarContext } from '../../contexts/sideBarContext'
 
 const LandingPage = () => {
   const {isAuth, setIsAuth} = useContext(authContext)
-  const [delayClose, setDelayClose] = useState(false)
+  const {openSidebar, setOpenSidebar} = useContext(sideBarContext)
   const [detail, setDetail] = useState(false)
   const [detailData, setDetailData] = useState([])
-  const [open, setOpen] = useState(false)
+
 
   useEffect(() => {
     const checkAuth = () => {
@@ -34,14 +35,14 @@ const LandingPage = () => {
 
   return (
     <div>
-        {open && <NavsideBar open={open} setOpen={setOpen} delayClose={delayClose} setDelayClose={setDelayClose}/>}
+        {openSidebar && <NavsideBar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar}/>}
         {detail && <RealDetail  setDetail={setDetail} detailData={detailData} detail={detail}/>}
-        <Navbar open={open} setOpen={setOpen}/>
+        <Navbar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar}/>
         <Hero/>
         {!isAuth && <Instruction/>}
         <ReportedItems  setDetail={setDetail} detailData={detailData} detail={detail} setDetailData={setDetailData}/>
         {isAuth && <FoundItems  setDetail={ setDetail} detailData={detailData} detail={detail}/>}
-        {/* <OurUsers/> */}
+        <OurUsers/>
         <Footer/>
     </div>
   )

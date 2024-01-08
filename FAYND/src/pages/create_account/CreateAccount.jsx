@@ -13,8 +13,12 @@ import axios from 'axios';
 import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import { checkScreen } from '../../custom hooks/checkScreen'
+import mobileCurve from '../../assets/mobile/mobileCurve.svg'
 
 const CreateAccount = () => {
+  const {windowSize} = checkScreen()
+  const width = windowSize.width
   const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
   const navigate = useNavigate()
   const [countries, setCountries] = useState([]);
@@ -83,20 +87,18 @@ const CreateAccount = () => {
 
   return (
     <div className="create_account_main">
+      {width <= 927 && <img src={mobileCurve} className={`mobileCurve ${'mobileCurve_signin'}`}/>}
       <div className="account_main_form_div">
         <div className="account_form_div">
-          <img src={fayndLogo} className="fayndLogo" />
           <p className="heading_account">Create an account</p>
           <p className="second_text">
             Create account to access other features.{' '}
           </p>
           <form onSubmit={handleAccountCreation}>
             <div className="create_account_form">
-              <div>
-                <div className="inner_account_div">
+              <div className='grid_div'>
                   <div className="input_div">
                     <label>Phone Number*</label>
-                    <br />
                     <InputMask
                       name="phone_number"
                       value={data.phone_number}
@@ -109,7 +111,6 @@ const CreateAccount = () => {
                   </div>
                   <div className="input_div">
                     <label>First Name*</label>
-                    <br />
                     <input
                       name="first_name"
                       value={data.first_name}
@@ -122,7 +123,6 @@ const CreateAccount = () => {
                   </div>
                   <div className="input_div">
                     <label htmlFor="country">Country</label>
-                    <br />
                     <select
                       id="countryDropdown"
                       name="country"
@@ -137,7 +137,6 @@ const CreateAccount = () => {
                   </div>
                   <div className="input_div">
                     <label>Password</label>
-                    <br />
                     <div className="input">
                       <input
                         name="password"
@@ -154,11 +153,8 @@ const CreateAccount = () => {
                       />
                     </div>
                   </div>
-                </div>
-                <div className="inner_account_div">
                   <div className="input_div">
                     <label>Email Address*</label>
-                    <br />
                     <input
                       name="email"
                       value={data.email}
@@ -172,7 +168,6 @@ const CreateAccount = () => {
                   </div>
                   <div className="input_div">
                     <label>Other Names*</label>
-                    <br />
                     <input
                       name="other_names"
                       value={data.other_names}
@@ -185,7 +180,6 @@ const CreateAccount = () => {
                   </div>
                   <div className="input_div">
                     <label>State*</label>
-                    <br />
                     <input
                       name="state"
                       value={data.state}
@@ -198,7 +192,6 @@ const CreateAccount = () => {
                   </div>
                   <div className="input_div">
                     <label> Confirm Password*</label>
-                    <br />
                     <div className="input">
                       <input
                         value={confirmPassword}
@@ -217,22 +210,23 @@ const CreateAccount = () => {
                       <span className={'span3'}>password does not match</span>
                     )}
                   </div>
-                </div>
               </div>
-              <button className="second_gray_button" type="submit">
+              <button className={`second_gray_button ${'responsive_button2'}`} type="submit">
                 Create An account
               </button>
-              <p>
-                Already have an account with us?{' '}
-                <Link to={'/signin'}><span className="span">Sign in</span></Link>
-              </p>
-              <p className="or">OR</p>
-              <div className="line"></div>
-              <p>Sign up with</p>
-              <div className="logo_button">
-                <img className="logo_box" src={google} />
-                <img className="logo_box" src={facebook} />
-              </div>
+              <div className='lower_part'>
+                  <p>
+                    Already have an account with us?{' '}
+                    <Link to={'/signin'}><span className="span">Sign in</span></Link>
+                  </p>
+                  <p className="or">OR</p>
+                  <div className="line"></div>
+                  <p>Sign up with</p>
+                  <div className="logo_button">
+                    <img className="logo_box" src={google} />
+                    <img className="logo_box" src={facebook} />
+                  </div>
+            </div>
             </div>
           </form>
         </div>

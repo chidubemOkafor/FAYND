@@ -22,7 +22,7 @@ const Navbar = (prop) => {
   }, []);
 
   const handleOpen = () => {
-    prop.setOpen(true)
+    prop.setOpenSidebar(true)
   }
 
   return (

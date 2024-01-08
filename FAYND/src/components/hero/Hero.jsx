@@ -10,9 +10,10 @@ import random_curver from '../../assets/random_curver.svg'
 import money_bag from '../../assets/healthicons_money-bag-outline.png'
 import { authContext } from '../../contexts/authContext'
 import { Link } from 'react-router-dom'
-
+import{checkScreen} from '../../custom hooks/checkScreen'
 const Hero = () => {
-  authContext
+  const {windowSize} = checkScreen()
+  const width = windowSize.width
   const {isAuth} = useContext(authContext)
 
   return (
@@ -30,7 +31,7 @@ const Hero = () => {
            </div>
            }
           <div className='box_rot'/>
-          <img src={money_bag} className='money_pot'/>
+          {width > 434 && <img src={money_bag} className='money_pot'/>}
         </div>
         <img className='woman_laptop' src={shoe}/>
     </div>

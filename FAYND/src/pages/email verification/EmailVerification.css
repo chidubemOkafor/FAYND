@@ -46,10 +46,6 @@
     line-height: 25px; /* 156.25% */
 }
 
-.main_verification_div {
-    display: flex;
-}
-
 .right {
     position: absolute;
     right: 0;

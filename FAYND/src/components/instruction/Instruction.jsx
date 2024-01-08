@@ -4,13 +4,18 @@ import bellcard from '../../assets/bellcard.svg'
 import vault from '../../assets/vault.svg'
 import magnifying from '../../assets/magnifying2.svg'
 import { Link } from 'react-router-dom'
+import tag from '../../assets/tag.png'
+import { checkScreen } from '../../custom hooks/checkScreen'
 
 const Instruction = () => {
+    const {windowSize} = checkScreen()
+    const width = windowSize.width
   return (
     <div className={`mainReportedItems ${'add_margin_top'}`}>
         <h1 className='instruction_title'>Reliable Solution for recovering Items.</h1>
         <h2  className='instruction_title2'>Safe yourself the stress of looking for your missing items, <Link to={'/createaccount'}><span className='instruction_span'> create an account</span></Link> with us. No more tears!</h2>
 
+    {width > 837 ? <>
         <div className={`main_divcard ${"green_div"}`}>
             <img src={bellcard} className='bellcard'/>
             <div>
@@ -32,7 +37,7 @@ const Instruction = () => {
                 <p className='divcard_text'>Search for items using the special identity number, such as IMEI, VIN, etc</p>
             </div>
         </div>
-   
+        </>: <div><img src={tag} className='tag'/></div>}
     </div>
   )
 }

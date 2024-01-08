@@ -65,9 +65,9 @@ const Confirmation = () => {
                 <p className='second_text'>Create account to access more features</p>
                 <div className='inner_cont_div'>
                     <div className='confirm_div'>
-                        <div className='detail_div'><p className='title_det'>Email Address</p><p>{confirmData.email}</p></div>
-                        <div className='detail_div'><p className='title_det'>Item type</p><p>{confirmData.type}</p></div>
-                        <div className='detail_div'><p className='title_det'>model</p><p>{confirmData.model}</p></div>
+                        <div className='detail_div'><p className='title_det'>Email Address</p><p className='title_det'>{confirmData.email}</p></div>
+                        <div className='detail_div'><p className='title_det'>Item type</p><p className='title_det'>{confirmData.type}</p></div>
+                        <div className='detail_div'><p className='title_det'>model</p><p className='title_det'>{confirmData.model}</p></div>
                     </div>
                     <div className='line'/>
                     <div className='confirm_div'>
@@ -77,7 +77,6 @@ const Confirmation = () => {
                         <div className='detail_div'><p className='title_det'>VIN</p><p>{confirmData.unique_number}</p></div>
                     </div>
                     <div className='image_div'>
-                        <p>Image</p>
                         <img src={confirmData.image_file && URL.createObjectURL(confirmData.image_file)} alt = "item image" className='iphoneImage' />
                     </div>
                     <button className='btn_report' onClick={handleReportItem}>Submit</button>

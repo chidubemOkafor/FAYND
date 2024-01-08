@@ -3,6 +3,8 @@ import './PassswordReset.css'
 import AuthCode from 'react-auth-code-input'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import mobileCurve from '../../assets/mobile/mobileCurve.svg'
+import { checkScreen } from '../../custom hooks/checkScreen'
 import Cookies from 'js-cookie'
 
 const PasswordResetCode = (prop) => {
@@ -13,6 +15,9 @@ const PasswordResetCode = (prop) => {
     token: '',
     reason: 'password-reset'
   })
+  const {windowSize} = checkScreen()
+  const {width} = windowSize
+
 
   const handleResendCode = async() => {
     try {
@@ -51,6 +56,7 @@ const PasswordResetCode = (prop) => {
 
   return (
     <div className='create_account_main'>
+    {width <= 723 && <img src={mobileCurve} className={`mobileCurve ${'mobileCurve_signin'}`}/>}
     <div className='resetDIv'>
         <p className='heading_account'>Reset Password</p>
         <p className='second_text'>Input code sent to your Email Address (************************@gmail.com)</p>
@@ -58,7 +64,7 @@ const PasswordResetCode = (prop) => {
                 <AuthCode placeholder='' inputClassName='input3' allowedCharacters='numeric' containerClassName='authcode' length={4} value = {data.token} onChange={handleChange} required/>
         </div>
         {invalidOtp != "" && <span className='span2'>{invalidOtp}</span>}
-        <button className='second_gray_button' onClick={handlePasswordReset}>Submit</button>
+        <button className={`second_gray_button ${'responsive_button2'}`} onClick={handlePasswordReset}>Submit</button>
         <p className='span2' onClick={handleResendCode}>Resend code</p>
     </div>
 </div>

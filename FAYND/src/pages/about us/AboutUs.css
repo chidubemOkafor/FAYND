@@ -18,6 +18,100 @@
     margin-bottom: 15px;
 }
 
+.main_verification_div {
+    display: flex;
+}
+.right {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+}
 .aboutus_div {
     width: 30em;
+}
+
+.about_logo {
+    width: 10em;
+    height: 15em;
+}
+
+@media (max-width: 768px) {
+    .aboutUs_text {
+        color: rgba(46, 21, 27, 0.80);
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 15px; /* 200% */
+        text-align: center;
+    }
+
+    .main_verification_div {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 3em;
+    }
+
+    .right {
+        height: auto;
+        position: relative;
+        width: 90%;
+    }
+
+    .aboutus_div {
+        width: 100%;
+    }
+
+    .responsive_button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 280px) {
+    .responsive_button {
+        width: 100%;
+        height: 3em;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1304px) {
+    .main_verification_div {
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        gap: 3em;
+    }
+
+    .about_logo {
+        width: 20em;
+        height: 30em;
+        margin-left: 10em;
+    }
+}
+
+
+@media (max-width: 1023px)  and (min-width: 780px){
+    .about_logo {
+        width: 20em;
+        height: 30em;
+    }
+
+    .aboutUs_text {
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 500px) and (min-width: 200px) {
+  
 }

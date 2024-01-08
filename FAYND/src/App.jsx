@@ -20,6 +20,7 @@ import Notification from './pages/profile/notification settings/Notification';
 import { loginContext } from './contexts/loginContext';
 import { dataContext } from './contexts/dataContext'
 import { authContext } from './contexts/authContext';
+import { sideBarContext } from './contexts/sideBarContext';
 import ReportedAlready from './pages/congratulation/ReportedAlready';
 import Search from './pages/search/Search';
 import Message from './pages/profile/messages/Message';
@@ -29,9 +30,11 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState({})
   const [confirmData, setConfirmData] = useState({})
   const [isAuth, setIsAuth] = useState(false)
+  const [openSidebar, setOpenSidebar] = useState(false)
 
   return (
     <>
+    <sideBarContext.Provider value={{openSidebar, setOpenSidebar}}>
     <authContext.Provider value={{isAuth, setIsAuth}}>
     <loginContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
       <dataContext.Provider value={{confirmData, setConfirmData}}>
@@ -63,6 +66,7 @@ function App() {
         </dataContext.Provider>
       </loginContext.Provider>
       </authContext.Provider>
+      </sideBarContext.Provider>
     </>
   )
 }
