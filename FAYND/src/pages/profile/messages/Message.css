@@ -168,6 +168,18 @@
     animation: 1s rotation infinite;
 }
 
+.no_friend{
+    width: 100%;
+    height: 86.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no_friend_text {
+    color: rgb(101, 72, 97, 0.4);
+}
+
 @keyframes rotation {
     0% {
         transform: rotate(360deg);

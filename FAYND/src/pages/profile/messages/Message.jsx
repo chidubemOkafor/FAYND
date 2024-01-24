@@ -16,38 +16,19 @@ const Message = () => {
   const {isLoggedIn} = useContext(loginContext)
   const [message, setMessage] = useState("")
   const [messagesArray, setMessagesArray] = useState([]);
+  const [chat, setChat] = useState(false)
   
   const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL
   const messagesContainerRef = useRef(null)
 
+  const socket = io.connect(url)
 
-
-  // const socket = io(url)
-
-  // useEffect(() => {
-  //   const socket = io(url);
-
-  //   // Connection opened
-  //   socket.on('connect', () => {
-  //     console.log('WebSocket connection opened');
-  //   });
-
-  //   // Connection closed
-  //   socket.on('disconnect', (reason) => {
-  //     console.log('WebSocket connection closed:', reason);
-  //   });
-
-  //   // Connection error
-  //   socket.on('error', (error) => {
-  //     console.error('WebSocket error:', error);
-  //   });
-
-  //   // Clean up the WebSocket connection when the component is unmounted
-  //   return () => {
-  //     socket.disconnect();
-  //     console.log('WebSocket connection closed during cleanup.');
-  //   };
-  // }, [url]);
+  useEffect(() => {
+    // Connection opened
+    socket.on('connect', () => {
+      console.log('WebSocket connection opened');
+    });
+  }, [url]);
   
   const handleSendMessage = async() => {
     const messageData = {
@@ -88,7 +69,8 @@ const Message = () => {
                     <span className={`tab_button ${ tabs === 1 && 'hignlight_background'}`} onClick={() => setTabs(1)}> chat </span>
                     <span className={`tab_button ${ tabs === 2 && 'hignlight_background'}`} onClick={() => setTabs(2)}> near </span>
                   </div>
-                  {tabs === 1  ? (<div className='active_div'>
+                  {tabs === 1  ? (
+                        chat ? (<div className='active_div'>
                           <div className='active_div_main'>
                             <div className='active_div_second_main'> 
                               <img src={isLoggedIn.data?.image_url} className='image_message3' alt = "image"/>
@@ -98,38 +80,8 @@ const Message = () => {
                               </div>
                             </div>
                             <p className='time'>04:15 am</p>
-                          </div>
-                          <div className='active_div_main'>
-                            <div className='active_div_second_main'> 
-                              <img src={isLoggedIn.data?.image_url} className='image_message3' alt = "image"/>
-                              <div className=''>
-                                <p className='friend_name'>Acme Co.</p>
-                                <p className='friend_country'>Japan</p>
-                              </div>
-                            </div>
-                            <p className='time'>04:15 am</p>
-                          </div>
-                          <div className='active_div_main'>
-                            <div className='active_div_second_main'> 
-                              <img src={isLoggedIn.data?.image_url} className='image_message3' alt = "image"/>
-                              <div className=''>
-                                <p className='friend_name'>Acme Co.</p>
-                                <p className='friend_country'>Japan</p>
-                              </div>
-                            </div>
-                            <p className='time'>04:15 am</p>
-                          </div>
-                          <div className='active_div_main'>
-                            <div className='active_div_second_main'> 
-                              <img src={isLoggedIn.data?.image_url} className='image_message3' alt = "image"/>
-                              <div className=''>
-                                <p className='friend_name'>Acme Co.</p>
-                                <p className='friend_country'>Japan</p>
-                              </div>
-                            </div>
-                            <p className='time'>04:15 am</p>
-                          </div>
-                  </div>) : (
+                        </div>
+                  </div>): <div className='no_friend'><p className='no_friend_text'>you have no active chat</p></div>) : (
                   <div className='active_div3'>
                       <div className='active_div2'>
                       <CgSpinner className='spinner'/>
@@ -139,7 +91,7 @@ const Message = () => {
                 </div>
               </div>
               <div className='nearby_people_list'>
-                <div className='main_body_div' ref={messagesContainerRef}>
+                {chat ? <div className='main_body_div' ref={messagesContainerRef}>
                     <div className='text_container'>
                       <div>
                       <div className='text_box'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor mollis leo proin turpis eu hac. Tortor dolor eu at bibendum suspendisse. Feugiat mi eu, rhoncus diam consectetur libero morbi pharetra. Id tristique mi eget eget tristique orci.</div>
@@ -160,7 +112,7 @@ const Message = () => {
                       </div>
                     </div>
                     ))}
-                </div>
+                </div>: <div className='no_friend'><p className='no_friend_text'>you have no active chat</p></div>}
                 {displayEmoji && <div className='emoji_picker'><EmojiPicker setDisplayEmoji={setDisplayEmoji} displayEmoji={displayEmoji} appendEmoji={appendEmoji}/></div>}
                 <div className='text_div'>
                   <div className='main_input_div'>

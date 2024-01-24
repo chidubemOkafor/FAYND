@@ -3,6 +3,14 @@ import './Takedown.css'
 import { changeFormat } from '../../custom hooks/convertDate'
 
 const Takedown = (prop) => {
+    const [showOthers, setShowOthers] = useState(false)
+    const handleChange = (e) => {
+        if (e.target.value === 'others') {
+            setShowOthers(true)
+            alert(working)
+        } 
+        setShowOthers(false)
+    }
   return (
     <div className="background">
     <div className='main_takedown_div'>
@@ -13,12 +21,12 @@ const Takedown = (prop) => {
         <div className='container_takedown'>
             <div className='takedown_wide'>
                 <div className='fake_input'>
-                    <p>Item ID</p>
+                    <label className='label3'>Item ID</label>
                     <div className='fake_input_container'> <p>{prop.renderData.reported_item_number}</p></div>
                 </div>
                 <div className='fake_input'>
-                    <p className='reasons_label'>Reasons</p>
-                    <select  className='options_fakeinput'>
+                    <label className='reasons_label'>Reasons</label>
+                    <select onChange={handleChange}  className='options_fakeinput'>
                         <option>Illegally reported</option>
                         <option>others</option>
                     </select>
@@ -26,17 +34,21 @@ const Takedown = (prop) => {
             </div>
             <div className='takedown_wide'>
                 <div className='fake_input'>
-                    <p>Date Registered</p>
+                    <label className='label3'>Date Registered</label>
                     <div className='fake_input_container'> <p>{changeFormat(prop.renderData.updated_at,"dash")}</p></div>
                 </div>
                 <div className='fake_input'>
-                    <p>Brand</p>
+                    <label className='label3'>Brand</label>
                     <div className='fake_input_container'> <p>{prop.renderData.model}</p></div>
                 </div>
             </div>
-
+            {showOthers && 
+                <div className='fake_input2'>
+                    <label className='label3'>your reason</label>
+                    <input className='fake_input_container'/>
+                </div>
+            }
         </div>
-
         <div className='image_div2'>
             <img src={prop.renderData.image_url} className='iphoneImage2' />
         </div>

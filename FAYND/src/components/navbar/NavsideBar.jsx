@@ -29,6 +29,7 @@ const NavsideBar = (prop) => {
             <div className='ul_main'>
                 <Link to={'/home'}><span onClick={() => prop.setOpenSidebar(false)} className='nav_bar_name'>Home</span></Link>
                 <Link to={'/aboutus'}><span onClick={() => prop.setOpenSidebar(false)} className='nav_bar_name'>About us</span></Link>
+                <Link to={'/contactus'}><span onClick={() => prop.setOpenSidebar(false)} className='nav_bar_name'>Contact us</span></Link>
                 <Link to={'/search'}><span onClick={() => prop.setOpenSidebar(false)} className='nav_bar_name'>search</span></Link>
                 <Link to={'/faq'}><span onClick={() => prop.setOpenSidebar(false)} className='nav_bar_name'>FAQ</span></Link>
                 <Link><span onClick={() => prop.setOpenSidebar(false)} className='nav_bar_name'>Profile</span></Link>

@@ -32,6 +32,15 @@
     z-index: 10;
 }
 
+.others {
+    height: 34px;
+    margin-top: 2em;
+    outline: none;
+    border: 1px solid rgba(41, 41, 41, 0.60);
+    background: var(--Neutral-Border, #D5DADD);
+    padding-left: 1em;
+}
+
 .takedown_wide {
     display: flex;
     gap: 19px;
@@ -66,7 +75,7 @@
 .fake_input {
     display: flex;
     flex-direction: column;
-    gap:12px;
+    gap:2px;
 }
 
 .fake_input p {
@@ -107,6 +116,7 @@ line-height: normal;
 .container_takedown {
     display: flex;
     flex-direction: column;
+    gap: 12px;
 }
 
 .fake_input_container p {

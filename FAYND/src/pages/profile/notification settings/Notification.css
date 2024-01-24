@@ -139,7 +139,7 @@
 }
 
 .notification_title {
-    color: #310131;
+    color: #616061;
     font-family: DM Sans;
     font-size: 14px;
     font-style: normal;
@@ -322,7 +322,7 @@ line-height: 19px; /* 158.333% */
 
 .inner_flex {
     display: flex;
-    gap: 23px;
+    gap: 5px;
     margin-top: 60px;
 }
 
