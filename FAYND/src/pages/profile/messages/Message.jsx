@@ -8,7 +8,7 @@ import sendmessage from '../../../assets/sendmessage.svg'
 import EmojiPicker from '../../../components/emoji_picker/EmojiPicker'
 import { CgSpinner } from "react-icons/cg";
 import io from 'socket.io-client'
-
+import Cookies from 'js-cookie'
 
 const Message = () => {
   const [displayEmoji, setDisplayEmoji] = useState(false)
@@ -18,18 +18,43 @@ const Message = () => {
   const [messagesArray, setMessagesArray] = useState([]);
   const [chat, setChat] = useState(false)
   
-  const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL
+  const URL = import.meta.env.VITE_REACT_APP_ENDPOINT_URL
   const messagesContainerRef = useRef(null)
 
-  const socket = io.connect(url)
+  const socket = io(URL, { autoConnect: false })
+
+
+  // useEffect(() => {
+  //   const setUuidTOLocalhost = async () => {
+  //     if(isLoggedIn.data.uuid !== undefined && isLoggedIn.data.username !== undefined) {
+  //       localStorage.setItem("uuid", isLoggedIn.data.uuid)
+  //       localStorage.setItem("username", isLoggedIn.data.username)
+  //     }
+  //   }
+  //   setUuidTOLocalhost()
+  // },[])
+
+  const sessionID = Cookies.get("refresh_token")
+  const userID = localStorage.getItem("uuid")
+  const username = localStorage.getItem("username")
 
   useEffect(() => {
-    // Connection opened
-    socket.on('connect', () => {
-      console.log('WebSocket connection opened');
-    });
-  }, [url]);
-  
+    socket.auth = { username : "okaforchidubem7@gmail.com"};
+    socket.connect();
+    // you are connected
+    socket.on("connect", () => {
+      console.log("connected")
+      socket.on("session", {sessionID, userID})
+      })
+
+    return () => {
+      socket.disconnect()
+      socket.on("disconnect", () => {
+        console.log("you are disconnected")
+      })
+    }
+  }, []);
+
   const handleSendMessage = async() => {
     const messageData = {
       message,

@@ -1,10 +1,9 @@
 .main_profile_div_top {
     display: flex;
-    justify-content: center;
     align-items: center;
-    align-items: center;
-    width: auto;
     justify-content: space-between;
+    padding: 0px 57px;
+    background-color: red;
 }
 
 .main_profile_div2 {
@@ -65,8 +64,10 @@
 }
 
 .inner_form_div1 {
-    display: flex;
+    display: grid;
     justify-content: space-between;
+    background-color: purple;
+    width: 90%;
 }
 
 .profile_button {
@@ -90,7 +91,7 @@
 
 .profile_input {
     display: block;
-    width: 360px;
+    width: 100%;
     height: 50px;
     padding: 10px;
     align-items: center;
@@ -115,7 +116,7 @@
 }
 
 .profile_email_div {
-    width: 780px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -216,8 +217,8 @@
     flex-direction: column;
     gap: 24px;
     margin-top: 144px;
+    background-color: blue;
 }
-
 
 .drag_and_drop_div2 {
     width: 655px;

@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     background: var(--black, #2E151B);
-    width: 360px;
+    width: 350px;
     height: 100vh;
     position: fixed;
 }
@@ -107,7 +107,9 @@ margin-top: 5vh;
 
 .profile_pic_div {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 4px;
     margin-bottom: 5vh;
 }
