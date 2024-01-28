@@ -6,20 +6,12 @@ import profile from '../../assets/profile.svg';
 import { Link } from 'react-router-dom';
 import { authContext } from '../../contexts/authContext';
 import hamburger from '../../assets/hamburger.svg';
+import { checkScreen } from '../../custom hooks/checkScreen';
+
 
 const Navbar = (prop) => {
   const { isAuth } = useContext(authContext);
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const {windowSize: {width}} = checkScreen()
 
   const handleOpen = () => {
     prop.setOpenSidebar(true)
@@ -53,7 +45,8 @@ const Navbar = (prop) => {
                   <Link to={'/search'}>
                     <img className='icon' src={magnifying} alt='magnifying' />
                   </Link>
-                  <Link to={'/profile/settings'}>
+                  {/* 983 */}
+                  <Link to={width >= 983 ? '/profile/settings' : '/profile'}>
                     <img className='icon' src={profile} alt='profile' />
                   </Link>
                 </div>

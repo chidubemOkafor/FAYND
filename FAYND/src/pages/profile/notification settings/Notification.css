@@ -45,12 +45,15 @@
 
 .notificationCount {
     background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 1px;
     width: 14px;
     margin-left: 10px;
     margin-bottom: 10px;
     position: absolute;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 11px;
     font-weight: 400;
 }
@@ -224,6 +227,12 @@ line-height: 19px; /* 158.333% */
     line-height: 19px;
 }
 
+.notifications_main_div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .noti_title_div {
     display: flex;
     align-items: center;
@@ -231,7 +240,7 @@ line-height: 19px; /* 158.333% */
     margin: 0;
     position: absolute;
     top: 0;
-    width: 71em;
+    width: 48%;
     margin-top: 20px;
 }
 
@@ -324,6 +333,12 @@ line-height: 19px; /* 158.333% */
     display: flex;
     gap: 5px;
     margin-top: 60px;
+}
+
+.notification_main_div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .color_text div {
@@ -430,4 +445,38 @@ line-height: 18px; /* 138.462% */
 letter-spacing: 0.8px;
 text-transform: capitalize;
 border: 0;
+}
+
+
+@media (max-width: 1032px) {
+    .main_profile_notification {
+        margin-left: 0;
+    }
+
+    .noti_title_div {
+        width: 90%;
+    }
+
+    .name_title {
+        color: var(--black, #2E151B);
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px; /* 133.333% */
+    }
+
+    .card_div {
+        border-radius: 4px;
+        width: auto;
+        height: 160px;
+        padding: 15px;
+    }   
+
+    .inner_flex {
+        display: flex;
+        gap: 5px;
+        margin-top: 0;
+        width: 90%;
+    }
 }

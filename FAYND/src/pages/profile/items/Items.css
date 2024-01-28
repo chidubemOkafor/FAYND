@@ -78,6 +78,12 @@
     }
 }
 
+.arrow_left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 
 table {
     border-collapse: collapse;
@@ -95,4 +101,30 @@ table {
     align-items: center;
     background-color: #f4f3f3;
     justify-content: center;
+}
+
+@media (max-width: 1032px) {
+    .main_profile_div2_5 {
+        margin-left: 0;
+    }
+
+    .main_profile_div3 {
+        width: 90%;
+        margin-top: 30px;
+    }
+
+    table {
+        overflow-x: scroll;
+        overflow: hidden;
+        width: 40em;
+    }
+
+    .table_div {
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+    .table_main_div {
+        margin-top: 0;
+    }
 }

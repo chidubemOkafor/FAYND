@@ -13,8 +13,11 @@ import { loginContext } from '../../contexts/loginContext'
 import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import {checkScreen} from '../../custom hooks/checkScreen'
 
 const SideBar = () => {
+  const {windowSize} = checkScreen()
+  const {width} = windowSize
   const navigate = useNavigate()
   const {isLoggedIn,setIsLoggedIn} = useContext(loginContext)
   const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
@@ -41,15 +44,15 @@ const SideBar = () => {
     }
     refresh()
   },[])
-
+//${width <= 1040 && 'mobile_sidebar_div_main' }
   return (
-    <div className='sidebar_div_main'>
+    <div className={`sidebar_div_main `}>
         <div>
             <Link to={'/home'}><img src={faynd} alt='faynd logo' className='faynd_mini_logo'/></Link>
         </div>
         <ul>
-            <Link to={'/profile/settings'}><li className='list_side_icon'><img src={profileicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Profile</p></li></Link>
-            <Link to={'/profile/message'}><li className='list_side_icon'><img src={messageicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Message</p></li></Link>
+            <Link to='/profile/settings'><li className='list_side_icon'><img src={profileicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Profile</p></li></Link>
+            <Link to='/profile/message'><li className='list_side_icon'><img src={messageicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Message</p></li></Link>
             <Link to='/profile/notification'><li className='list_side_icon'><img src={bellicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Notification</p></li></Link>
             <li className='list_side_icon'><img src={priceicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Pricing</p></li>
             <Link to='/profile/items'><li className='list_side_icon'><img src={itemicon} alt='icon' className='sidebar_icons'/><p className='sidebar_text'>Items</p></li></Link>

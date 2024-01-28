@@ -6,6 +6,9 @@ import { changeFormat } from '../../../custom hooks/convertDate';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { loginContext } from '../../../contexts/loginContext';
+import { checkScreen } from '../../../custom hooks/checkScreen';
+import { Link } from 'react-router-dom';
+import arrowLeft from '../../../assets/arrowleft.svg'
 
 const Items = () => {
   const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
@@ -19,6 +22,8 @@ const Items = () => {
     setRenderData(data[num])
     setShowDetail(!showDetail);
   }
+
+  const {windowSize: {width}} = checkScreen()
 
   const config = {
     headers: {
@@ -56,11 +61,11 @@ const Items = () => {
   return (
     <div className='main_profile_div'>
       {showDetail && <Takedown renderData={renderData} showDetail={showDetail} setShowDetail={setShowDetail}/>}
-      <SideBar />
+      {width > 1032 && <SideBar/>}
       <div className='main_profile_div2_5'>
         <div className='main_profile_div3'>
           <div>
-            <h1 className='name_title'>Hi! {isLoggedIn.data?.first_name}</h1>
+          <div className='arrow_left'>{width <= 1032 && <Link to={'/profile'}><img src={arrowLeft}/></Link> }<h1 className='name_title'>Hi! {isLoggedIn.data?.first_name}</h1></div>
             <h2 className='name_second_title'>Here are all your reported items.</h2>
           </div>
             <div className='table_main_div'>
@@ -68,6 +73,7 @@ const Items = () => {
                 {data === null ? ( 
                 <div className='missing_div'></div>
                 ) : data.length > 0 ? ( 
+                <div className='table_div'>
                 <table>
                     <thead>
                     <tr className='table_main'>
@@ -100,6 +106,7 @@ const Items = () => {
                     ))}
                     </tbody>
                 </table>
+                </div>
                 ) : (
                 <div className='not_found' style={{opacity: 0.5}}><p>No reported item</p></div>
                 )}

@@ -6,11 +6,16 @@ import profileuser from '../../../assets/profile2.svg'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import { loginContext } from '../../../contexts/loginContext'
+import { checkScreen } from '../../../custom hooks/checkScreen'
+import arrowLeft from '../../../assets/arrowleft.svg'
+import { Link } from 'react-router-dom'
 
 
 const ProfileSetting = () => {
   const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
   const [file, setFile] = useState(null)
+  const {windowSize} = checkScreen()
+  const {width} = windowSize
 
   const {isLoggedIn} = useContext(loginContext)
 
@@ -38,11 +43,11 @@ const ProfileSetting = () => {
 
   return (
     <div className='main_profile_div'>
-        <SideBar/>
-        <div className='main_profile_div2'>
+        {width > 1032 && <SideBar/>}
+        <div className={`main_profile_div2 ${width < 1032 && 'main_profile_width'}`}>
           <div className='main_profile_div3'>
             <div className='main_profile_div_top'>
-              <p className='noti_title'>Profile Setting</p>
+            {width <= 1032 && <Link to={'/profile'}><img src={arrowLeft}/></Link> }<p className='name_title'>Profile Setting</p>
               <button className='profile_button'>Save Changes</button>
             </div>
             <form className='profile_form'>
@@ -86,6 +91,7 @@ const ProfileSetting = () => {
                   <label className='profile_label'>About you <span className='optional'>(Optional)</span></label>
                   <textarea className='profile_textarea' placeholder='write about yourself here'/>
               </div>
+              <button className='mobileProfileButton'>Save Changes</button>
             </form>
             <div className='photo_div'>
               <p className='yourphoto'>Your Photo</p>

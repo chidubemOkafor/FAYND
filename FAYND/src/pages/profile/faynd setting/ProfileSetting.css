@@ -1,9 +1,9 @@
 .main_profile_div_top {
     display: flex;
     align-items: center;
+    align-self: center;
     justify-content: space-between;
-    padding: 0px 57px;
-    background-color: red;
+    width: 90%;
 }
 
 .main_profile_div2 {
@@ -13,6 +13,11 @@
     justify-content: center;
     margin-left: 22em;
     margin-bottom: 45em;
+}
+
+.main_profile_width {
+    width: 100vw;
+    margin-left: 0;
 }
 
 .underline_div {
@@ -33,6 +38,23 @@
     text-transform: capitalize;
     margin-bottom: 21px;
     text-align: start;
+}
+
+.mobileProfileButton{
+    border-radius: 10px;
+    background: var(--Brand-Primary, #2F4454);
+    padding :10px 20px;
+    width: 90%;
+    height: 50px;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; /* 138.462% */
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
 }
 
 .update_image_div {
@@ -60,13 +82,14 @@
     width: 65%;
     display: flex;
     flex-direction: column;
-    margin-top: 5em;
+    margin-top: 20px;
 }
 
 .inner_form_div1 {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
-    background-color: purple;
+    align-items: center;
     width: 90%;
 }
 
@@ -91,13 +114,14 @@
 
 .profile_input {
     display: block;
-    width: 100%;
+    width: auto;
     height: 50px;
     padding: 10px;
     align-items: center;
     gap: 10px;
     flex-shrink: 0;
     border-radius: 4px;
+    outline: none;
     border: 1px solid rgba(46, 21, 27, 0.50);
     margin: 0;
 
@@ -112,6 +136,7 @@
     gap: 10px;
     flex-shrink: 0;
     border-radius: 4px;
+    outline: none;
     border: 1px solid rgba(46, 21, 27, 0.50);
 }
 
@@ -124,7 +149,7 @@
 
 .profile_select {
     display: block;
-    width: 380px;
+    width: auto;
     height: 40px;
     padding: 10px;
     align-items: center;
@@ -142,14 +167,14 @@
     max-height: 172px;
     padding: 10px;
     border-radius: 4px;
+    outline: none;
     border: 1px solid rgba(46, 21, 27, 0.50);
 }
 
 .profile_input_div {
-    width: 380px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: start;
     gap: 8px;
 }
 
@@ -216,12 +241,11 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-top: 144px;
-    background-color: blue;
+    margin-top: 50px;
 }
 
 .drag_and_drop_div2 {
-    width: 655px;
+    width: 80%;
     height: 244px;
     flex-shrink: 0;
     border-radius: 8px;
@@ -248,4 +272,23 @@
     line-height: 18px;
     letter-spacing: 0.8px;
     text-transform: capitalize;
+}
+
+@media (max-width: 493px) {
+    .inner_form_div1 {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 25px;
+    }
+
+    .profile_form {
+        margin-top: 50px;
+    }
+
+    .drag_and_drop_div2 {
+        margin-top: 10px;
+    }
+
+    .yourphoto {
+        font-size: 20px;
+    }
 }

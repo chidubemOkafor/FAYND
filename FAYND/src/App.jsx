@@ -24,6 +24,7 @@ import { sideBarContext } from './contexts/sideBarContext';
 import ReportedAlready from './pages/congratulation/ReportedAlready';
 import Search from './pages/search/Search';
 import Message from './pages/profile/messages/Message';
+import ProfileNav from './pages/profile/profile navigation/ProfileNav';
 
 function App() {
   const [email, setEmail] = useState("")
@@ -56,6 +57,7 @@ function App() {
             <Route path='/reportpage/confirmation/errorreporting' element={<ReportedAlready/>}/>
             <Route path='/aboutus' element={<AboutUs/>}/>
             <Route path='/contactus' element={<ContactUs/>}/>
+            <Route path='/profile' element={<ProfileNav/>}/>
             <Route path='/profile/settings' element={<ProfileSetting/>}/>
             <Route path='/profile/items' element={<Items/>}/>
             <Route path='/profile/message' element={<Message/>}/>

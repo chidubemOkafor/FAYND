@@ -21,6 +21,10 @@
     background: rgb(101, 72, 97);
 }
 
+.arrowleft {
+    color: white;
+}
+
 .chat_div {
     justify-content: space-between;
     display: flex;
@@ -190,7 +194,7 @@
     width: 55px;
     height: 56px;
     flex-shrink: 0;
-    border-radius: 5px;
+    border-radius: 50px;
 }
 
 .active_div_main {
@@ -378,4 +382,58 @@
 
 .emojiSize {
     font-size: 24px;
+}
+
+
+@media (max-width: 1032px) {
+    .chatbox {
+        position: absolute;
+    }
+
+    .main_profile_div2_6 {
+        margin-left: 0;
+    }
+
+    .chat_div {
+        width: 90vw;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .nearby_people_list {
+        width: 100%;
+    }
+
+    .name_tab{
+        position: absolute;
+        top: 10%;
+        width: 90vw;
+        height: 10%;
+        justify-content: start;
+        border-bottom: 1px solid var(--brand-2-300, rgba(218, 120, 147, 0.50));
+        border-right: 1px solid var(--brand-2-300, rgba(218, 120, 147, 0.50));
+        margin-top: 20px;
+    }
+
+    .main_body_div {
+        height: 80%;
+    }
+
+    .nearby_people_list {
+        height: 80%;
+    }
+
+    .Navbar_text {
+        font-size: 18px;
+    }
+
+    .text_div {
+        width: 90%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .text_container {
+        padding: 0;
+    }
 }

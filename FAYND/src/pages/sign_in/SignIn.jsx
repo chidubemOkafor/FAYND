@@ -38,6 +38,7 @@ const SignIn = () => {
         const response  =  await axios.post(url + 'api/v1/users/login', data)
             if(response.data.message === "Login successful") {
                 setIsLoggedIn(response.data.data)
+                localStorage.setItem("userProfile", JSON.stringify(response.data.data))
                 Cookies.set("refresh_token",response.data.data.refresh_token,{ expires: 7, sameSite: 'strict' })
                 navigate('/home')
             }

@@ -6,9 +6,11 @@ import { authContext } from '../../contexts/authContext'
 import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
 import { useDetectClickOutside } from 'react-detect-click-outside'
+import { checkScreen } from '../../custom hooks/checkScreen'
 
 const NavsideBar = (prop) => {
     const { isAuth } = useContext(authContext)
+    const {windowSize: {width}} = checkScreen()
     const navigate = useNavigate()
 
     const handleLogOut = () => {
@@ -32,7 +34,7 @@ const NavsideBar = (prop) => {
                 <Link to={'/contactus'}><span onClick={() => prop.setOpenSidebar(false)} className='nav_bar_name'>Contact us</span></Link>
                 <Link to={'/search'}><span onClick={() => prop.setOpenSidebar(false)} className='nav_bar_name'>search</span></Link>
                 <Link to={'/faq'}><span onClick={() => prop.setOpenSidebar(false)} className='nav_bar_name'>FAQ</span></Link>
-                <Link><span onClick={() => prop.setOpenSidebar(false)} className='nav_bar_name'>Profile</span></Link>
+                <Link to={width >= 983 ? '/profile/settings' : '/profile'}><span onClick={() => prop.setOpenSidebar(false)} className='nav_bar_name'>Profile</span></Link>
                 {isAuth ? <span className='sign' onClick={handleLogOut} >Sign out</span> : <Link to={'/signin'}><span onClick={handleLogOut} className="grayButton2">Sign in</span></Link>}
             </div>
         </div>

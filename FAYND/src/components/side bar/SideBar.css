@@ -64,6 +64,10 @@
     text-transform: capitalize;
 }
 
+.mobile_sidebar_div_main {
+    width: 100vw;
+}
+
 .faynd_mini_logo {
     display: flex;
 width: 55px;

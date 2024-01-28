@@ -54,7 +54,7 @@ const Takedown = (prop) => {
         </div>
 
         <div className="checkbox_div">
-            <input type='checkbox'/>
+            <input type='checkbox' className='checkbox'/>
             <p className='longtext'>By taking down this item, it implies that the item is either found, illegally reported or  wrongly reported. therefore this item will be deleted from your profile and also will not be displayed as missing again. click to accept.</p>
         </div>
 
