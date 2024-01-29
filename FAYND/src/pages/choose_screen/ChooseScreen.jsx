@@ -28,7 +28,7 @@ const EmailVerification = () => {
                 <p className='confirmation'>Register, report and track your item with us!</p>
                 <Link to={'/createaccount'}><button className='gray_button'>Create Account</button></Link>
                 <Link to={'/signin'}><button className='transparent_button'>Login</button></Link>
-                <p className='underline_button'>Register items</p>  
+                <Link to={'/reportpage'}><p className='underline_button'>Register items</p></Link>  
             </div>
         </div>
     </div>

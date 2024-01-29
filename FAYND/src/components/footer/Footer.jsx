@@ -7,6 +7,7 @@ import instagram from '../../assets/socials/instagram.svg'
 import linkedin from '../../assets/socials/linkedin.svg'
 import twitter from '../../assets/socials/twitter.svg'
 import youtube from '../../assets/socials/youtube.svg'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -19,23 +20,23 @@ const Footer = () => {
             <div className='inner_footer_div'>
                 <ul className='footer_title'>
                     <li className='title'>Profile</li>
-                    <li>My items</li>
-                    <li>Profile</li>
-                    <li>Notification</li>
-                    <li>Message</li>
+                    <li className='footer_text'><Link to={'/profile/items'}>My items</Link></li>
+                    <Link to={'/profile/settings'}><li>Profile</li></Link>
+                    <Link to={'/profile/notification'}><li>Notification</li></Link>
+                    <Link to={'/profile/message'}><li>Message</li></Link>
                 </ul>
                 <ul className='footer_title'>
                     <li className='title'>Features</li>
-                    <li>Report an item</li>
-                    <li>FAQs</li>
-                    <li>About us</li>
-                    <li>Confirm an item</li>
+                    <Link to={'/reportpage'}><li>Report an item</li></Link>
+                    <Link to={'/faq'}><li>FAQs</li></Link>
+                    <Link to={'/aboutus'}><li>About us</li></Link>
+                    <Link to={'/reportpage'}><li>Confirm an item</li></Link>
                 </ul>
                 <ul className='footer_title'>
-                    <li className='title'>Contact Us</li>
-                    <li>Email Address</li>
-                    <li>Address</li>
-                    <li>Phone Number</li>
+                    <Link><li className='title'>Contact Us</li></Link>
+                    <Link to={'/contactus'}><li>Email Address</li></Link>
+                    <Link to={'/contactus'}><li>Address</li></Link>
+                    <Link to={'/contactus'}><li>Phone Number</li></Link>
                 </ul>
             </div>
         </div>

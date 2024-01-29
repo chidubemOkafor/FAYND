@@ -131,8 +131,8 @@ ul {
     line-height: 4em;
 }
 
-.logo_find {
-
+a {
+    color: #FFF;
 }
 
 @media (max-width: 740px) {

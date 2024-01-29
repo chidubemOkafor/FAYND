@@ -62,7 +62,6 @@ function App() {
             <Route path='/profile/items' element={<Items/>}/>
             <Route path='/profile/message' element={<Message/>}/>
             <Route path='/profile/notification' element={<Notification/>}/>
-            <Route path='/profile/message' element={<Notification/>}/>
           </Routes>
           </BrowserRouter>
         </dataContext.Provider>

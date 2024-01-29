@@ -19,14 +19,17 @@ const Message = () => {
   const [tabs, setTabs] = useState(1)
   const {isLoggedIn} = useContext(loginContext)
   const [message, setMessage] = useState("")
-  const [messagesArray, setMessagesArray] = useState([]);
-  const [chat, setChat] = useState([])
+  const [chat, setChat] = useState({
+    content: ""
+  })
   const [nearUsers, setNearUsers] = useState([])
   const [text, setText] = useState({
     from: "",
     to: "",
     content: ""
   })
+
+  const [textMessage, setTextMessage] = useState("")
   
   const URL = import.meta.env.VITE_REACT_APP_ENDPOINT_URL
   const messagesContainerRef = useRef(null)
@@ -57,21 +60,14 @@ const Message = () => {
     returnNearUsers()
   },[])
 
-  // useEffect(() => {
-  //   socket.auth = { username : "okaforchidubem7@gmail.com"};
-  //   socket.connect();
-  //   // you are connected
-  //   socket.on("connect", () => {
-  //     console.log("connected")
-  //   })
-
-  //   return () => {
-  //     socket.disconnect()
-  //     socket.on("disconnect", () => {
-  //       console.log("you are disconnected")
-  //     })
-  //   }
-  // }, []);
+  useEffect(() => {
+    socket.auth = { username : "okaforchidubem7@gmail.com"};
+    socket.connect();
+    // you are connected
+    socket.on("connect", () => {
+      console.log("connected")
+    })
+  }, []);
 
   // const handleSendMessage = async() => {
   //   const messageData = {
@@ -88,12 +84,13 @@ const Message = () => {
   }
 
   const handleSelectChat = (prop) => {
-    setText({
+    setText((prevMessage) => ({
+      ...prevMessage,
       from: userProfile.uuid,
-      content: "hello world",
-      to:  nearUsers[prop].uuid
-    });
-  
+      content: message,
+      to: nearUsers[prop].uuid
+    }));
+    
     (() => {
       setChat(nearUsers[prop]);
       setMessage("");
@@ -107,7 +104,7 @@ const Message = () => {
     socket.on("private-message", (data) => {
       try {
         console.log(data)
-        alert(data.content)
+        setTextMessage(data.content)
       } catch (error) {
         console.error(error)
       }
@@ -115,6 +112,7 @@ const Message = () => {
   },[])
   
   const sendMessage = () => {
+    setTextMessage(message)
     const sessionID = localStorage.getItem("sessionID")
     if(sessionID) {
       socket.auth = {sessionID}
@@ -194,22 +192,22 @@ const Message = () => {
                 </div>}
               </div>
               <div className='nearby_people_list'>
-                {chat.length === 0 ? <div className='main_body_div' ref={messagesContainerRef}>
+               <div className='main_body_div' ref={messagesContainerRef}>
+                    <div>
                     <div className='text_container'>
                       <div>
-                      <div className='text_box'>Lorem ipsum dolor szit amet, consectetur adipiscing elit. Dolor mollis leo proin turpis eu hac. Tortor dolor eu at bibendum suspendisse. Feugiat mi eu, rhoncus diam consectetur libero morbi pharetra. Id tristique mi eget eget tristique orci.</div>
-                      <p className='text_time'>10:15 pm</p>
+                        <div className='text_box'>{textMessage}</div>
+                        <p className='text_time'>10:15 pm</p>
                       </div>
                     </div>
-                    {messagesArray.map((data, index) => (
-                    <div key={index} className='text_container2'>
+                    <div className='text_container2'>
                       <div>
-                        <div className='text_box2'>{data.message}</div>
-                        <p className='text_time2'>{data.time}</p>
+                        <div className='text_box2'>{textMessage}</div>
+                        <p className='text_time2'>10:15 pm</p>
                       </div>
                     </div>
-                    ))}
-                </div>: <div className='no_friend'><p className='no_friend_text'>you have no active chat</p></div>}
+                    </div>   
+                </div>
                 {displayEmoji && <div className='emoji_picker'><EmojiPicker setDisplayEmoji={setDisplayEmoji} displayEmoji={displayEmoji} appendEmoji={appendEmoji}/></div>}
                 <div className='text_div'>
                   <div className='main_input_div'>
