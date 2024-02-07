@@ -5,11 +5,13 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 import { dataContext } from '../../contexts/dataContext'
 import { useNavigate } from 'react-router-dom'
+import error from './error'
 
 const Confirmation = () => {
     const navigate = useNavigate()
     const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
     const {confirmData, setConfirmData} = useContext(dataContext)
+    const [error, setError] = useState(false)
 
     // helper function
     const isEmpty = (obj) => {
@@ -37,13 +39,14 @@ const Confirmation = () => {
     
     const config = {
         headers: {
-            Authorization: `Bearer ${Cookies.get('refresh_token')}`
+            Authorization: `Bearer ${Cookies.get("refresh_token") ?? Cookies.get("report_token")}`
         },
     };
     
     const handleReportItem = async() => {
         try {
             const response = await axios.post(`${url}api/v1/items/report-item`,formData, config)
+            console.log(response)
             if(response.data.message === "Item has been successfully reported") {
                 console.log(response.data.data.item.reported_item_number)
                 navigate(`/reportpage/confirmation/congratulation/${response.data.data.item.reported_item_number}`)
@@ -52,11 +55,11 @@ const Confirmation = () => {
             if(error.response.data.message === "product has already been reported") {
                 navigate('/reportpage/confirmation/errorreporting')
             }
-            console.log(error)
+            console.error(error)
         }
     }
     
-  return (
+    return (
     <div>
         <Navbar/>
         <div className='create_account_main'>

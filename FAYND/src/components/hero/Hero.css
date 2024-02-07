@@ -130,6 +130,16 @@
     gap: 24px;
 }
 
+.welcome {
+    color: white;
+    font-size: 64px;
+}
+
+.welcome_div {
+    margin-top: 80px;
+}
+ 
+
 @media (max-width: 1390px) {
     .hero_title {
         color: #FFF;

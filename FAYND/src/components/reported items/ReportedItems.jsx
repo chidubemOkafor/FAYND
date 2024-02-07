@@ -68,7 +68,7 @@ const ReportedItems = (prop) => {
             <img src={bluedot}/>
             <img src={greendot}/>
         </div>}
-        <h1 className='items_title'>Reported Items</h1>
+        <h1 className='items_title'>Most Reported Items</h1>
         <p className='items_sub_title'>Display of stolen items. you can search for more</p>
        
         <div className='grid_items'>

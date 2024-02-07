@@ -65,3 +65,10 @@
     width: 20em;
     margin: 0px 251px;
 }
+
+.main_error_div {
+    width: 300px;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px; 
+}

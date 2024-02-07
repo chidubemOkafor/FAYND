@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import mobileCurve from '../../assets/mobile/mobileCurve.svg'
 import { checkScreen } from '../../custom hooks/checkScreen'
+import { ImSpinner8 } from "react-icons/im";
 
 const PassswordReset = (prop) => {
   const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
@@ -11,10 +12,13 @@ const PassswordReset = (prop) => {
   const [email, setEmail] = useState("")
   const {windowSize} = checkScreen()
   const {width} = windowSize
+  const [loading, setLoading] = useState(false)
+  
 
   const handlePasswordReset = async(e) => {
     e.preventDefault()
     try {
+      setLoading(true)
      const response = await axios.post(url+ "api/v1/users/forgot-password",{"email": email})
      if(response.data.message === "Email sent") {
         prop.setEmail(email)
@@ -23,6 +27,8 @@ const PassswordReset = (prop) => {
      console.log(response)
     } catch (error) {
       console.error(error)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -32,12 +38,12 @@ const PassswordReset = (prop) => {
         <div className='resetDIv'>
             <p className='heading_account'>Reset your password</p>
             <p className='second_text'>Enter your email address and we will send your instructions to reset your password</p>
-            <form onSubmit={handlePasswordReset}>
+            <form onSubmit={handlePasswordReset} className='resetForm'>
               <div className='input_div'>
                   <label>Email Address*</label>
-                  <input name='email' value = {email} onChange={(e) => setEmail(e.target.value)} className='input' type='email' placeholder='youremail@gmail.com' required/>
+                  <input name='email' value = {email} onChange={(e) => setEmail(e.target.value)} className='input6' type='email' placeholder='youremail@gmail.com' required/>
               </div>
-              <button className={`second_gray_button ${'responsive_button2'}`} type='submit'>continue</button>
+              <button className={`second_gray_button ${'responsive_button2'}`} type='submit'> {loading ? <ImSpinner8 className='spinner'/> : 'continue'}</button>
             </form>
         </div>
     </div>

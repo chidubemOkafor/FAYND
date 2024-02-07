@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext, useEffect, useState} from 'react'
 import pinkcurve from '../../assets/pinkcurve.svg'
 import './Hero.css'
 import eclipse1 from '../../assets/eclipse/eclipse1.svg'
@@ -11,10 +11,32 @@ import money_bag from '../../assets/healthicons_money-bag-outline.png'
 import { authContext } from '../../contexts/authContext'
 import { Link } from 'react-router-dom'
 import{checkScreen} from '../../custom hooks/checkScreen'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import Cookies from 'js-cookie'
+
+
 const Hero = () => {
+  const navigate = useNavigate()
   const {windowSize} = checkScreen()
   const width = windowSize.width
   const {isAuth} = useContext(authContext)
+  const [email, setEmail] = useState("")
+  const url = import.meta.env.VITE_REACT_APP_ENDPOINT_URL;
+
+
+  const verify = async(e) => {
+    e.preventDefault()
+     try {
+      const response = await axios.post(`${url}api/v1/users/send-email`, {email})
+      console.log(response)
+      if(response.data.status === 200) {
+          navigate('/home/reportItemVerification')
+      }
+     } catch (error) {
+      console.error(error)
+     }
+  }
 
   return (
     <div className='pink_curve'>
@@ -25,10 +47,10 @@ const Hero = () => {
           {isAuth ? 
           <Link to={'/reportpage'}><button className='hero_button'>Report your item</button></Link>
            : 
-           <div className='enter_email_div'>
-              <input type='email' className='hero_input' placeholder='Enter your Email address'/>
-              <button className='hero_button'>Continue</button>
-           </div>
+           <form className='enter_email_div' onSubmit={verify}>
+              <input onChange={(e) => setEmail(e.target.value)} value={email} type='email' className='hero_input' placeholder='Enter your Email address' required/>
+              <button className='hero_button' type='submit'>Continue</button>
+           </form>
            }
           <div className='box_rot'/>
           {width > 434 && <img src={money_bag} className='money_pot'/>}

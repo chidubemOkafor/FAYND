@@ -10,6 +10,7 @@ import { loginContext } from '../../contexts/loginContext'
 import Cookies from 'js-cookie'
 import { checkScreen } from '../../custom hooks/checkScreen'
 import mobileCurve from '../../assets/mobile/mobileCurve.svg'
+import { ImSpinner8 } from "react-icons/im";
 
 const SignIn = () => {
     const {windowSize} = checkScreen()
@@ -24,6 +25,9 @@ const SignIn = () => {
         password: ''
     })
 
+    const [isPassword, setIsPassword] = useState(false)
+    const [loading, setLoading] = useState(false)
+
     const handleChange = (e) => {
         const {name, value} = e.target;
         setData((prevData) => ({
@@ -35,7 +39,8 @@ const SignIn = () => {
     const handleLogin = async(e) => {
         e.preventDefault()
         try {
-        const response  =  await axios.post(url + 'api/v1/users/login', data)
+            setLoading(true)
+            const response  =  await axios.post(url + 'api/v1/users/login', data)
             if(response.data.message === "Login successful") {
                 setIsLoggedIn(response.data.data)
                 localStorage.setItem("userProfile", JSON.stringify(response.data.data))
@@ -50,6 +55,8 @@ const SignIn = () => {
             } else {
                 console.error("Error: ",error)
             }
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -68,15 +75,15 @@ const SignIn = () => {
                     </div>
                     <div className='input_div'>
                         <label>Password*</label>
-                        <div className='input'><input name='password' value={data.password} onChange={handleChange} className='password_input' type='password' required/>
-                            <img src={eye} className='eyes'/>
+                        <div className='input'><input name='password' value={data.password} onChange={handleChange} className='password_input' type={!isPassword ? "password" : "text"} required/>
+                            <img src={eye} className='eyes' onClick={() => setIsPassword(!isPassword)}/>
                         </div>
-                        {matchingError && <Link to={'/resetpassword'}><p>invalid password <span className='span2'>Forgot Password</span></p></Link>}
+                        <Link to={'/resetpassword'}>{matchingError && <p className=''> incorrect password </p>}<span className='span'>Forgot Password?</span></Link>
                     </div>
                 </div>
                 <div className='bottom_div'>
-                    <button className={`second_gray_button ${'responsive_button2'}`} type='submit'>Login</button>
-                        <p>Don't have an account with us? <Link to={'/createaccount'}><span className='span'>Create Account</span></Link></p>
+                    <button className={`second_gray_button ${'responsive_button2'}`} type='submit' disabled={loading}> {loading ? <ImSpinner8 className='spinner'/> : 'Login'} </button>
+                    <p>Don't have an account with us? <Link to={'/createaccount'}><span className='span'>Create Account</span></Link></p>
                     <p className='or'>OR</p>
                     <div className='line'/>
                     <p>Sign up with</p>

@@ -131,8 +131,12 @@ ul {
     line-height: 4em;
 }
 
+.footer_text {
+    color: white;
+}
+
 a {
-    color: #FFF;
+    color: var(--black, #2E151B);
 }
 
 @media (max-width: 740px) {

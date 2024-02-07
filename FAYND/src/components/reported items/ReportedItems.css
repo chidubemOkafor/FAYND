@@ -20,7 +20,7 @@
     font-weight: 400;
     line-height: 27.109px; /* 56.477% */
     display: flex;
-    width: 468px;
+    width: 500px;
     height: 52px;
     padding: 9.036px;
     justify-content: center;
@@ -152,7 +152,7 @@
         font-weight: 500;
         line-height: 27.109px; /* 150.607% */
         border-bottom: 1px solid var(--black, #2E151B);
-        width: 152px;
+        width: 200px;
         height: 10px;
     }
     .items_sub_title {

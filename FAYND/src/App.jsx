@@ -25,6 +25,7 @@ import ReportedAlready from './pages/congratulation/ReportedAlready';
 import Search from './pages/search/Search';
 import Message from './pages/profile/messages/Message';
 import ProfileNav from './pages/profile/profile navigation/ProfileNav';
+import VerifyEmail from './components/hero/VerifyEmail';
 
 function App() {
   const [email, setEmail] = useState("")
@@ -50,6 +51,7 @@ function App() {
             <Route path='/resetpassword/newpassword' element={<NewPassword/>}/>
             <Route path='/faq' element={<FAQ/>}/>
             <Route path='/home' element={<LandingPage/>}/>
+            <Route path='/home/reportItemVerification' element={<VerifyEmail/>}/>
             <Route path='/search' element={<Search/>}/>
             <Route path='/reportpage' element={<ReportPage/>}/>
             <Route path='/reportpage/confirmation' element={<Confirmation/>}/>

@@ -13,26 +13,26 @@ import mobileCurve from '../../assets/mobile/mobileCurve.svg'
 const EmailVerification = () => {
     const {windowSize} = checkScreen()
     const width = windowSize.width
-  return (
-    <div className='main_verification_div'>
-        {width > 1437 &&<div className='background_curve'>
-            <div className='inner_curve_div'>
-                <img src={singleLogo} className='office_lady'/>
-            </div>
-        </div>}
-        {width <= 1437 && <img src={mobileCurve} className='mobileCurve'/>}
-    
-        <div className='right'>
-            <div>
-                <p className='verification_text'>Report your items!</p>
-                <p className='confirmation'>Register, report and track your item with us!</p>
-                <Link to={'/createaccount'}><button className='gray_button'>Create Account</button></Link>
-                <Link to={'/signin'}><button className='transparent_button'>Login</button></Link>
-                <Link to={'/reportpage'}><p className='underline_button'>Register items</p></Link>  
+    return (
+        <div className='main_verification_div'>
+            {width > 1437 &&<div className='background_curve'>
+                <div className='inner_curve_div'>
+                    <img src={singleLogo} className='office_lady'/>
+                </div>
+            </div>}
+            {width <= 1437 && <img src={mobileCurve} className='mobileCurve'/>}
+        
+            <div className='right'>
+                <div>
+                    <p className='verification_text'>Report your items!</p>
+                    <p className='confirmation'>Register, report and track your item with us!</p>
+                    <Link to={'/createaccount'}><button className='gray_button'>Create Account</button></Link>
+                    <Link to={'/signin'}><button className='transparent_button'>Login</button></Link>
+                    <Link to={'/home'}><p className='underline_button'>Register items</p></Link>  
+                </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default EmailVerification
