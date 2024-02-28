@@ -26,6 +26,11 @@ form div {
     align-items: center;
 }
 
+.mobile_form_input {
+    display: flex;
+    flex-direction: row;
+}
+
 @media (max-width: 927px) {
     .mobile_form_input{
         display: flex;
@@ -69,7 +74,7 @@ form div {
         width: auto;
     }
     .input {
-        width: 95%;
+        width: auto;
     }
 
     .input_div {
