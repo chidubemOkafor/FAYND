@@ -135,8 +135,12 @@ ul {
     color: white;
 }
 
-a {
-    color: var(--black, #2E151B);
+.footerLink{
+    color: rgb(181, 181, 181);
+}
+
+.footerLink:hover {
+    color: #FFF;
 }
 
 @media (max-width: 740px) {

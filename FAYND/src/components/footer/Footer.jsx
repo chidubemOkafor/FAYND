@@ -20,23 +20,23 @@ const Footer = () => {
             <div className='inner_footer_div'>
                 <ul className='footer_title'>
                     <li className='title'>Profile</li>
-                    <li className='footer_text'><Link to={'/profile/items'}>My items</Link></li>
-                    <Link to={'/profile/settings'}><li>Profile</li></Link>
-                    <Link to={'/profile/notification'}><li>Notification</li></Link>
-                    <Link to={'/profile/message'}><li>Message</li></Link>
+                    <Link to={'/profile/items'}><li className='footerLink'>My items</li></Link>
+                    <Link to={'/profile/settings'}><li className='footerLink'>Profile</li></Link>
+                    <Link to={'/profile/notification'}><li className='footerLink'>Notification</li></Link>
+                    <Link to={'/profile/message'}><li className='footerLink'>Message</li></Link>
                 </ul>
                 <ul className='footer_title'>
                     <li className='title'>Features</li>
-                    <Link to={'/reportpage'}><li>Report an item</li></Link>
-                    <Link to={'/faq'}><li>FAQs</li></Link>
-                    <Link to={'/aboutus'}><li>About us</li></Link>
-                    <Link to={'/reportpage'}><li>Confirm an item</li></Link>
+                    <Link to={'/reportpage'}><li className='footerLink'>Report an item</li></Link>
+                    <Link to={'/faq'}><li className='footerLink'>FAQs</li></Link>
+                    <Link to={'/aboutus'}><li className='footerLink'>About us</li></Link>
+                    <Link to={'/reportpage'}><li className='footerLink'>Confirm an item</li></Link>
                 </ul>
                 <ul className='footer_title'>
                     <Link><li className='title'>Contact Us</li></Link>
-                    <Link to={'/contactus'}><li>Email Address</li></Link>
-                    <Link to={'/contactus'}><li>Address</li></Link>
-                    <Link to={'/contactus'}><li>Phone Number</li></Link>
+                    <Link to={'/contactus'}><li className='footerLink'>Email Address</li></Link>
+                    <Link to={'/contactus'}><li className='footerLink'>Address</li></Link>
+                    <Link to={'/contactus'}><li className='footerLink'>Phone Number</li></Link>
                 </ul>
             </div>
         </div>
